@@ -1,7 +1,8 @@
 package com.exerciseapp.exerciseapp.models;
 
-import jakarta.annotation.Nullable;
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,12 +20,15 @@ public class User {
     private Long id;
 
     @Column(nullable = false, unique = true) // there should be an @size with a value below and above username but it does not seem to work.
+    @Size(max = 20)
     private String username;
 
     @Column
+    @Size(max = 50)
     private String email;
 
     @Column
+    @Size(max = 120)
     private String password;
 
 
