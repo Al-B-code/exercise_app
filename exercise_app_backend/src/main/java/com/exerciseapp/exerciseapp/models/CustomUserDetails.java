@@ -40,17 +40,17 @@ public class CustomUserDetails implements UserDetails {
     }
     @Override
     public boolean isAccountNonExpired() {
-        return true; // Modify as needed based on your application logic
+        return true; // Modify as needed based on application logic
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true; // Modify as needed based on your application logic
+        return true; // Modify as needed based on application logic
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true; // Modify as needed based on your application logic
+        return true; // Modify as needed based on application logic
     }
 
 }
