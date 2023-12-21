@@ -30,8 +30,8 @@ public class Role {
         this.id = id;
     }
 
-    public ERole getName() {
-        return name;
+    public String getName() {
+        return this.name.toString();
     }
 
     public void setName(ERole name) {
