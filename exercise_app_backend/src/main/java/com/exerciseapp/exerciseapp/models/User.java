@@ -46,7 +46,7 @@ public class User {
                     name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
-    private Collection<Role> roles = new HashSet<>(); // should i set it to a new Hashset?
+    private Collection<Role> roles; // should i set it to a new Hashset?
 
 
     public User(String username, String firstName, String lastName, String email, String password, boolean enabled) {
