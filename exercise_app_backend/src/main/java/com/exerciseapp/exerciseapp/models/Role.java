@@ -12,9 +12,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
     @Column(length = 20)
-    private ERole name;
+    private String name;
 
     @ManyToMany(mappedBy = "roles")
     private Collection<User> users;
@@ -32,8 +32,25 @@ public class Role {
 
     }
 
-    public Role(ERole name) {
+    public Role(String name) {
         this.name = name;
+    }
+
+
+    public Collection<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Collection<User> users) {
+        this.users = users;
+    }
+
+    public Collection<Privilege> getPrivileges() {
+        return privileges;
+    }
+
+    public void setPrivileges(Collection<Privilege> privileges) {
+        this.privileges = privileges;
     }
 
     public Integer getId() {
@@ -45,10 +62,10 @@ public class Role {
     }
 
     public String getName() {
-        return this.name.toString();
+        return this.name;
     }
 
-    public void setName(ERole name) {
+    public void setName(String name) {
         this.name = name;
     }
 }
