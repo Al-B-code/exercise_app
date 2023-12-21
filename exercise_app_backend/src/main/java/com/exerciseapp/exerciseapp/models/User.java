@@ -24,12 +24,16 @@ public class User {
     private String username;
 
     @Column
+    @Size(max = 120)
+    private String password;
+
+    private boolean enabled; // not sure if needed due to spring security userdetails service.
+
+    @Column
     @Size(max = 50)
     private String email;
 
-    @Column
-    @Size(max = 120)
-    private String password;
+
 
 
     @ManyToMany
@@ -37,16 +41,24 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, boolean enabled) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.enabled = enabled;
     }
 
 
     public User() {
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public Long getId() {
         return id;
