@@ -4,6 +4,7 @@ package com.exerciseapp.exerciseapp.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,26 +24,35 @@ public class User {
     @Size(max = 20)
     private String username;
 
-    @Column
+    private String firstName;
+
+    private String lastName;
+
     @Size(max = 120)
     private String password;
 
-    private boolean enabled; // not sure if needed due to spring security userdetails service.
-
-    @Column
     @Size(max = 50)
     private String email;
 
+    private boolean enabled; // not sure if needed due to spring security userdetails service.
 
+    private boolean tokenExpired;
 
 
     @ManyToMany
-    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles = new HashSet<>(); // should i set it to a new Hashset?
 
 
-    public User(String username, String email, String password, boolean enabled) {
+    public User(String username, String firstName, String lastName, String email, String password, boolean enabled) {
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.enabled = enabled;
@@ -58,6 +68,35 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public boolean isTokenExpired() {
+        return tokenExpired;
+    }
+
+    public void setTokenExpired(boolean tokenExpired) {
+        this.tokenExpired = tokenExpired;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public Long getId() {
@@ -92,7 +131,7 @@ public class User {
         this.email = email;
     }
 
-    public Set<Role> getRoles() {
+    public Collection<Role> getRoles() {
         return roles;
     }
 
