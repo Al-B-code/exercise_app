@@ -15,6 +15,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
 
+    public JwtAuthenticationFilter(JwtService jwtService) {
+        this.jwtService = jwtService;
+    }
+
 
     @Override
     protected void doFilterInternal(
@@ -31,7 +35,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         jwt = authHeader.substring(7); // it is 7 because the first character after bearer will be the jwt token.
-        userEmail = jwtService.extractUsername(jwt)// todo extract the user email from JWT token;
+        userEmail = jwtService.extractUsername(jwt);// todo extract the user email from JWT token;
 
 
 
