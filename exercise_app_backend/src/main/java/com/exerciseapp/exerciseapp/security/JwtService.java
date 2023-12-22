@@ -8,6 +8,7 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.security.Key;
 import java.util.Base64;
 import java.util.Date;
@@ -27,7 +28,7 @@ public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jj
     private static final String SECRET_KEY = "4BEF88A8E88AC99CDE599863EC1D1"; // this will be visible due to being uploaded on git. probably should use an .env
 
     public String extractUsername(String token) {
-         return extractClaim(token, Claims::getSubject); // todo extract username
+         return extractClaim(token, Claims::getSubject);
     }
 
     public String generateToken(UserDetails userDetails) {
@@ -46,6 +47,19 @@ public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jj
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24)) // token will be valid for 24 hours + 1000 milliseconds
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact(); // this method generates a token.
+    }
+
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+        final String username = extractUsername(token);
+        return (username.equals(userDetails.getUsername())) && !isTokenExpired(token);
+    }
+
+    private boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date());
+    }
+
+    private Date extractExpiration(String token) {
+        return extractClaim(token, Claims::getExpiration);
     }
 
     private Claims extractAllClaims(String token) {
