@@ -39,6 +39,10 @@ public class SecurityConfig {
                 .expressionHandler(customWebSecurityExpressionHandler()) // not sure if this appropriate.
                 .requestMatchers(HttpMethod.GET, "/roleHierarchy") //antmatchers is deprecated so i think requestmatchers can be used in place.
                 .hasRole("STAFF");
+
+
+
+        return http.build();
     }
 
 
