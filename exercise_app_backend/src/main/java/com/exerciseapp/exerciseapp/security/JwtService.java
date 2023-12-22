@@ -32,7 +32,7 @@ public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jj
     }
 
     public String generateToken(UserDetails userDetails) {
-        generateToken(new HashMap<>(), userDetails); // this generate token method can be reused later without extra claims like here for example compared to below.
+        return generateToken(new HashMap<>(), userDetails); // this generate token method can be reused later without extra claims like here for example compared to below.
     }
 
     public String generateToken(
