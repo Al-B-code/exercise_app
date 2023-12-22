@@ -2,12 +2,17 @@ package com.exerciseapp.exerciseapp.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Base64;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
 
 @Service // makes this a managed bean.
@@ -23,6 +28,24 @@ public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jj
 
     public String extractUsername(String token) {
          return extractClaim(token, Claims::getSubject); // todo extract username
+    }
+
+    public String generateToken(UserDetails userDetails) {
+        generateToken(new HashMap<>(), userDetails); // this generate token method can be reused later without extra claims like here for example compared to below.
+    }
+
+    public String generateToken(
+            Map<String, Object> extraClaims,
+            UserDetails userDetails
+    ) {
+        return Jwts
+                .builder()
+                .setClaims(extraClaims)
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(new Date(System.currentTimeMillis())) // allows us to see if the jwt is valid by checking when it was created.
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24)) // token will be valid for 24 hours + 1000 milliseconds
+                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
+                .compact(); // this method generates a token.
     }
 
     private Claims extractAllClaims(String token) {
