@@ -8,10 +8,16 @@ import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Base64;
+import java.util.function.Function;
 
 @Service // makes this a managed bean.
 public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jjwt-jackson and jjwt-impl
 
+
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimsResolver.apply(claims);
+    }
 
     private static final String SECRET_KEY = "4BEF88A8E88AC99CDE599863EC1D1"; // this will be visible due to being uploaded on git. probably should use an .env
 
