@@ -13,6 +13,8 @@ import java.io.IOException;
 @Component // This indicates to spring that this class is a managed bean. could have used service or repository as both extend component.
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
+    private final JwtService jwtService;
+
 
     @Override
     protected void doFilterInternal(
@@ -20,6 +22,18 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain // the chain of responsibility design pattern when it is called the next filter when then be called afterwards.
     ) throws ServletException, IOException {
+        final String authHeader = request.getHeader("Authorization"); // this is the header that contains the JWT token.
+        final String jwt;
+        final String userEmail;
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) { // basic jwt / header check. if invalid go to next step in filter chain.
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        jwt = authHeader.substring(7); // it is 7 because the first character after bearer will be the jwt token.
+        userEmail = jwtService.extractUsername(jwt)// todo extract the user email from JWT token;
+
+
 
     }
 }
