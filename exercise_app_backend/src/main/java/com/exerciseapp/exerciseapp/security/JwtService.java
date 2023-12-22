@@ -22,7 +22,7 @@ public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jj
     private static final String SECRET_KEY = "4BEF88A8E88AC99CDE599863EC1D1"; // this will be visible due to being uploaded on git. probably should use an .env
 
     public String extractUsername(String token) {
-        return null; // todo extract username
+         return extractClaim(token, Claims::getSubject); // todo extract username
     }
 
     private Claims extractAllClaims(String token) {
