@@ -27,8 +27,8 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private IUserService service; // ??????????
+//    @Autowired
+//    private IUserService service; // ??????????
 
     @Autowired
     private MessageSource messages;
