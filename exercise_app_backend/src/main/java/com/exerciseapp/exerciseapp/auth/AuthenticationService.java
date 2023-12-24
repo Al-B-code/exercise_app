@@ -2,10 +2,10 @@ package com.exerciseapp.exerciseapp.auth;
 
 import com.exerciseapp.exerciseapp.config.JwtService;
 import com.exerciseapp.exerciseapp.models.Role;
+import com.exerciseapp.exerciseapp.models.User;
 import com.exerciseapp.exerciseapp.repositories.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +40,7 @@ public class AuthenticationService {
             repository.save(user);
             var jwtToken = jwtService.generateToken(user);
             return AuthenticationResponse.builder() // need to double check this. 1:53
-                    .token()
+                    .token(jwtToken)
                     .build();
 
     }
