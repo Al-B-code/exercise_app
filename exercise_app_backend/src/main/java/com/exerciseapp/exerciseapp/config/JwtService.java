@@ -1,4 +1,4 @@
-package com.exerciseapp.exerciseapp.security;
+package com.exerciseapp.exerciseapp.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
