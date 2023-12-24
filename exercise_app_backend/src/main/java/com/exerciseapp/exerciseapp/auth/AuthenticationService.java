@@ -54,8 +54,9 @@ public class AuthenticationService {
         );
         var user = repository.findByEmail(request.getEmail())
                 .orElseThrow(); // may need to throw the correct exception and handle the correct exceptions later.
+        var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder() // need to double-check this. 1:53
-                .token()
+                .token(jwtToken)
                 .build();
     }
 }
