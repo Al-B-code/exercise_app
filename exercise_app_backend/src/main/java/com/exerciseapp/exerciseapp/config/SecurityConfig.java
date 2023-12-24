@@ -27,7 +27,7 @@ public class SecurityConfig {
             .csrf()
             .disable()
             .authorizeHttpRequests()// this allows us to whitelist the specified urls in the requestmatchers to be visible by default without a jwt token. for example the login page should be visible to all.
-            .requestMatchers("")
+            .requestMatchers("/api/v1/auth/**") // allowing all the methods inside this controller.
             .permitAll()
             .anyRequest()// Any other request is required to be authenticated.
             .authenticated()
