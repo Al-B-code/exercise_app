@@ -1,6 +1,6 @@
 package com.exerciseapp.exerciseapp.auth;
 
-
+// might need to add lombok to dependencies
 public class AuthenticationResponse {
 
     private String token;
