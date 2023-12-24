@@ -25,7 +25,7 @@ public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jj
         return claimsResolver.apply(claims);
     }
 
-    private static final String SECRET_KEY = "4BEF88A8E88AC99CDE599863EC1D1"; // this will be visible due to being uploaded on git. probably should use an .env
+    private static final String SECRET_KEY = "RTy0CYaJfni0uszweGG5fcgTXQbk7qynFgqoKOXxawIcZL4nfZhqVE2HisdgfDxunWVkPuXA2stu5Nd0DAFetwfgdfsgd"; // this will be visible due to being uploaded on git. probably should use an .env
 
     public String extractUsername(String token) {
          return extractClaim(token, Claims::getSubject);
