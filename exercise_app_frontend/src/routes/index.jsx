@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"; // will 
 import { useAuth } from "../Provider/AuthProvider"; // allows for access to the authentication Context.
 import { ProtectedRoute } from "./ProtectedRoute"; // allows us to use ProtectedRoutes as a wrapper for authenticated routes.
 
+// the files having js or jsx for the file extension doesn't really matter as they're interchangeable and vscode can read jsx in js files.
 
 const Routes = () => {
     const { token } = useAuth();
