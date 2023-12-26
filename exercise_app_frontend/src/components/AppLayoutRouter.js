@@ -7,9 +7,8 @@ const AppLayoutRouter = () => {
 
 
 
-
-
-    return ( 
+    return (
+        <>
         <div className="nav-bar">
             <ul>
                 <li>
@@ -26,6 +25,13 @@ const AppLayoutRouter = () => {
                 </li>
             </ul>
         </div>
+
+
+        <section className="outlet-container">
+            <Outlet/>
+        </section>
+
+    </>
 
 
 
