@@ -20,11 +20,9 @@ public class UserService {
 
 
     public User getUser(String token) {
-
         System.out.println(token);
         String email = jwtService.extractUsername(token);
         Optional<User> user = userRepository.findByEmail(email);
-
         return user.orElse(null);
     }
 
