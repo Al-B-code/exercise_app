@@ -2,12 +2,14 @@ package com.exerciseapp.exerciseapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration
 @EnableWebSecurity
@@ -26,7 +28,7 @@ public class SecurityConfig {
         http // this way of configuring the securityFilterChain is deprecated and will need to be updated.
             .csrf()
             .disable()
-            .authorizeHttpRequests()// this allows us to whitelist the specified urls in the requestmatchers to be visible by default without a jwt token. for example the login page should be visible to all.
+            .authorizeRequests()// this allows us to whitelist the specified urls in the requestmatchers to be visible by default without a jwt token. for example the login page should be visible to all.
             .requestMatchers("/api/v1/auth/**") // allowing all the methods inside this controller.
             .permitAll()
             .anyRequest()// Any other request is required to be authenticated.
@@ -39,6 +41,9 @@ public class SecurityConfig {
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class); // This allows us to execute jwtAuthFilter prior to the usernamePasswordAuthenticationFilter
 
         return http.build();
+
+
+
 
     }
 
