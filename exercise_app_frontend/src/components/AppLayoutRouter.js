@@ -5,8 +5,6 @@ import { Outlet, NavLink } from "react-router-dom";
 const AppLayoutRouter = () => {
 
 
-
-
     return (
         <>
         <div className="nav-bar">
