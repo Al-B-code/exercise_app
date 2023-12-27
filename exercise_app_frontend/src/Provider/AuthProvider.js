@@ -41,6 +41,7 @@ const contextValue = useMemo(
     () => ({
         token,
         setToken,
+        headers,
     }),
     [token]
 );

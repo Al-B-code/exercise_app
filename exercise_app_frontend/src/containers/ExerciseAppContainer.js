@@ -26,21 +26,6 @@ const ExerciseAppContainer = () => {
     } 
 
 
-    const ExerciseAppRoutes = createBrowserRouter([
-        {
-            path: "/",
-            element: <AppLayoutRouter/>,
-            children: [
-                {
-                    path: "/",  // maybe a welcome page instead? probably best to have the login be a welcome and login page with a link to register.
-                    element: <LoginForm/>
-                }
-
-
-            ]
-        }
-    ])
-    
     
     
     
@@ -48,7 +33,6 @@ const ExerciseAppContainer = () => {
     return (
         <>
         <p>Hello from ExerciseAppContainer</p>
-            <RouterProvider router={ExerciseAppRoutes} />
         </> 
 
     );
