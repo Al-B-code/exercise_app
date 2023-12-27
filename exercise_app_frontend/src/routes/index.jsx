@@ -3,6 +3,7 @@ import { useAuth } from "../Provider/AuthProvider"; // allows for access to the 
 import { ProtectedRoute } from "./ProtectedRoute"; // allows us to use ProtectedRoutes as a wrapper for authenticated routes.
 import Login from "../Pages/Login";
 import Logout from "../Pages/Logout";
+import UserHomePage from "../Pages/UserHomePage";
 
 // the files having js or jsx for the file extension doesn't really matter as they're interchangeable and vscode can read jsx in js files.
 
@@ -30,7 +31,7 @@ const Routes = () => {
             children: [
                 {
                     path: "/",
-                    element: <div>User Home Page</div>,
+                    element: <UserHomePage/>,
                 },
                 {
                     path: "/profile",
