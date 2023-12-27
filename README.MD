@@ -20,7 +20,7 @@
   - **POST : "/authenticate"**
     - allows a user to be authenticated by checking their email and password. Returns a JWT.
 ---
-### "/user
+### "/user/**"
 
   - GET : "/"
     - Returns Current User if logged in.
