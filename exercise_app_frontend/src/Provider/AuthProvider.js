@@ -31,6 +31,7 @@ useEffect(() => {
         headers = {
             Authorization: null,
         };
+        // console.log("hello from else statement in useEffect of AuthProvider")
         localStorage.removeItem('token');
     }
 
