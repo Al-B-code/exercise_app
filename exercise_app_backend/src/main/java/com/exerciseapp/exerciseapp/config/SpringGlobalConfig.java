@@ -8,12 +8,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SpringGlobalConfig implements WebMvcConfigurer {
 
 
-    public void AddCorsMappings(CorsRegistry registry) {
+    public void addCorsMappings(CorsRegistry registry) {
 
         registry.addMapping("/**")
-                .allowedOrigins("/*")
-                .allowedHeaders("/*")
-                .allowedMethods("/*");
+                .allowedOrigins("*")
+                .allowedHeaders("*")
+                .allowedMethods("*");
 
     }
 
