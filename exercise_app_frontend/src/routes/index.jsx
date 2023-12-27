@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"; // will be configuring and providing routing functionality.
 import { useAuth } from "../Provider/AuthProvider"; // allows for access to the authentication Context.
 import { ProtectedRoute } from "./ProtectedRoute"; // allows us to use ProtectedRoutes as a wrapper for authenticated routes.
+import Login from "../Pages/Login";
+import Logout from "../Pages/Logout";
 
 // the files having js or jsx for the file extension doesn't really matter as they're interchangeable and vscode can read jsx in js files.
 
@@ -36,7 +38,7 @@ const Routes = () => {
                 },
                 {
                     path: "/logout",
-                    element: <div>Logout</div>
+                    element: <Logout/>
                 }
             ],
         },
@@ -50,14 +52,14 @@ const Routes = () => {
         },
         {
             path: "/login",
-            element: <div>Login</div>
+            element: <Login/>
         }
     ]
 
     const router = createBrowserRouter([ // the ...Spread operator is used to merge the routes all into one array for the createBrowserRoute configuration.
         ...routesForPublic,
         ...(!token ? routesForNotAuthenticatedOnly : []), // checks if the user is authenticated (token exists). If not, it includes the routesForNotAuthenticatedOnly array; otherwise, it includes an empty array.
-        ...routesForNotAuthenticatedOnly,
+        ...routesForAuthenticatedOnly,
     ])
 
     return <RouterProvider router={router} />;
