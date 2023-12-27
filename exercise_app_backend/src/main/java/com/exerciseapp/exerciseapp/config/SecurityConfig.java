@@ -34,6 +34,7 @@ public class SecurityConfig {
             .anyRequest()// Any other request is required to be authenticated.
             .authenticated()
             .and()
+            .formLogin(formLogin -> formLogin.loginPage("http://localhost:3000/login")) // not sure if this is working correctly.
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // makes a new session for each request.
             .and()
