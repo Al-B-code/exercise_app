@@ -17,13 +17,13 @@ const Logout = () => {
 
     console.log("This is the test token: " + token);
 
-    setTimeout(() => {
-        handleLogout();
-    }, 3 * 1000);
+    // setTimeout(() => {
+    //     handleLogout();
+    // }, 3 * 1000);
     
     return ( 
         <>
-            Logout Page
+            <button onClick={handleLogout}>Logout</button>
         </>
 
     );
