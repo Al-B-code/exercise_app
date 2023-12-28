@@ -4,6 +4,7 @@ import { ProtectedRoute } from "./ProtectedRoute"; // allows us to use Protected
 import Login from "../Pages/Login";
 import Logout from "../Pages/Logout";
 import UserHomePage from "../Pages/UserHomePage";
+import Register from "../Pages/Register";
 
 // the files having js or jsx for the file extension doesn't really matter as they're interchangeable and vscode can read jsx in js files.
 
@@ -54,7 +55,12 @@ const Routes = () => {
         {
             path: "/login",
             element: <Login/>
+        },
+        {
+            path: "/register",
+            element: <Register/>
         }
+
     ]
 
     const router = createBrowserRouter([ // the ...Spread operator is used to merge the routes all into one array for the createBrowserRoute configuration.
