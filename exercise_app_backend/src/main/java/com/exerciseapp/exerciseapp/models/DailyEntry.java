@@ -3,9 +3,10 @@ package com.exerciseapp.exerciseapp.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 @Entity
-@Table(name = "dailyEntry")
+@Table(name = "dailyEntries")
 public class DailyEntry {
 
 
@@ -19,7 +20,7 @@ public class DailyEntry {
     private User user;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private ZonedDateTime date;
 
     private Double weight;
 
@@ -33,10 +34,9 @@ public class DailyEntry {
     }
 
 
-    public DailyEntry(Long id, User user, Double weight, Integer calorieIntake, Integer sleepDuration, String mood) {
-        this.id = id;
+    public DailyEntry(User user, Double weight, Integer calorieIntake, Integer sleepDuration, String mood) {
         this.user = user;
-        this.date = LocalDate.now();
+        this.date = ZonedDateTime.now();
         this.weight = weight;
         this.calorieIntake = calorieIntake;
         this.sleepDuration = sleepDuration;
@@ -59,11 +59,11 @@ public class DailyEntry {
         this.user = user;
     }
 
-    public LocalDate getDate() {
+    public ZonedDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(ZonedDateTime date) {
         this.date = date;
     }
 
