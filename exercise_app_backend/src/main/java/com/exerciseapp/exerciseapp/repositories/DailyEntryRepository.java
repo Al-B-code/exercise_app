@@ -18,8 +18,4 @@ public interface DailyEntryRepository extends JpaRepository<DailyEntry, Long> {
     Optional<List<DailyEntry>> findAllByUserAndDateBetween(User user, ZonedDateTime startDate, ZonedDateTime endDate);
 
 
-
-
-
-
 }
