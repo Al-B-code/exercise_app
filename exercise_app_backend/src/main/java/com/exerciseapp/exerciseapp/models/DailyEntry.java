@@ -34,9 +34,9 @@ public class DailyEntry {
     }
 
 
-    public DailyEntry(User user, Double weight, Integer calorieIntake, Integer sleepDuration, String mood) {
+    public DailyEntry(User user, ZonedDateTime date, Double weight, Integer calorieIntake, Integer sleepDuration, String mood) {
         this.user = user;
-        this.date = ZonedDateTime.now();
+        this.date = date;
         this.weight = weight;
         this.calorieIntake = calorieIntake;
         this.sleepDuration = sleepDuration;
