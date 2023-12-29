@@ -33,7 +33,7 @@ public class DailyEntry {
     public DailyEntry() {
     }
 
-
+    // Will have to default the date submitted to current date in the frontend.
     public DailyEntry(User user, ZonedDateTime date, Double weight, Integer calorieIntake, Integer sleepDuration, String mood) {
         this.user = user;
         this.date = date;
