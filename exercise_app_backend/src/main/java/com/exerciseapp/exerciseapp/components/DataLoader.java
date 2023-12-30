@@ -34,7 +34,7 @@ public class DataLoader implements ApplicationRunner {
                 "firstNameTest",
                 "lastNameTest",
                 "test@email.com",
-                passwordEncoder.encode("testPassword"),
+                passwordEncoder.encode("testPassword"), // has to be encoded on the backend otherwise the hashed passwords wont match, will change at one point
                 Role.ADMIN,
                 DailyEntries
         );
