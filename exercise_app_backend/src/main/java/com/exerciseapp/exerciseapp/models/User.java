@@ -41,6 +41,14 @@ public class User implements UserDetails {
     private List<DailyEntry> dailyEntries = new ArrayList<>();
 
 
+    public User(String firstname, String lastname, String email, String password, Role role, List<DailyEntry> dailyEntries) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.dailyEntries = dailyEntries;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
