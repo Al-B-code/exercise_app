@@ -1,9 +1,11 @@
 package com.exerciseapp.exerciseapp.components;
 
 import com.exerciseapp.exerciseapp.models.DailyEntry;
+import com.exerciseapp.exerciseapp.models.Goal;
 import com.exerciseapp.exerciseapp.models.Role;
 import com.exerciseapp.exerciseapp.models.User;
 import com.exerciseapp.exerciseapp.repositories.DailyEntryRepository;
+import com.exerciseapp.exerciseapp.repositories.GoalRepository;
 import com.exerciseapp.exerciseapp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -26,6 +28,10 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     DailyEntryRepository dailyEntryRepository;
+
+
+    @Autowired
+    GoalRepository goalRepository;
 
 
 
@@ -70,7 +76,14 @@ public class DataLoader implements ApplicationRunner {
         );
         dailyEntryRepository.save(dailyEntry2);
 
+        Goal goal = new Goal(
+                user,
+                "Go on a walk every day",
+                ZonedDateTime.now(),
+                ZonedDateTime.of(2024, 2, 29, 23, 59, 59, 59, ZoneId.of("UTC"))
+        );
 
+        goalRepository.save(goal);
 
 
     }
