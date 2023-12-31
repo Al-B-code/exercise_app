@@ -70,6 +70,9 @@ public class DataLoader implements ApplicationRunner {
         );
         dailyEntryRepository.save(dailyEntry2);
 
+
+
+
     }
 
 
