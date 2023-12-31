@@ -25,9 +25,50 @@ public class Goal {
     public Goal() {
     }
 
-    public Goal(String goal, ZonedDateTime startDate, ZonedDateTime endDate) {
-        Goal = goal;
+    public Goal(User user, String goal, ZonedDateTime startDate, ZonedDateTime endDate) {
+        this.user = user;
+        this.Goal = goal;
         this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getGoal() {
+        return Goal;
+    }
+
+    public void setGoal(String goal) {
+        Goal = goal;
+    }
+
+    public ZonedDateTime getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(ZonedDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    public ZonedDateTime getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(ZonedDateTime endDate) {
         this.endDate = endDate;
     }
 }
