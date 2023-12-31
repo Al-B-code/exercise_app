@@ -3,6 +3,7 @@ package com.exerciseapp.exerciseapp.components;
 import com.exerciseapp.exerciseapp.models.DailyEntry;
 import com.exerciseapp.exerciseapp.models.Role;
 import com.exerciseapp.exerciseapp.models.User;
+import com.exerciseapp.exerciseapp.repositories.DailyEntryRepository;
 import com.exerciseapp.exerciseapp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -11,6 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +23,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    DailyEntryRepository dailyEntryRepository;
 
 
 
@@ -40,9 +46,29 @@ public class DataLoader implements ApplicationRunner {
         );
         userRepository.save(user);
 
+        DailyEntry dailyEntry1 = new DailyEntry(
+                user,
+                ZonedDateTime.now(),
+                110D,
+                1500,
+                8,
+                "Feeling good"
+        );
+
+        dailyEntryRepository.save(dailyEntry1);
 
 
+        ZonedDateTime date = ZonedDateTime.of(2023, 12, 30, 12, 30, 0, 0, ZoneId.of("UTC"));
 
+        DailyEntry dailyEntry2 = new DailyEntry(
+                user,
+                date,
+                112D,
+                1500,
+                8,
+                "Feeling great"
+        );
+        dailyEntryRepository.save(dailyEntry2);
 
     }
 
