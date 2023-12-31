@@ -1,5 +1,6 @@
 package com.exerciseapp.exerciseapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ public class DailyEntry {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore // This is to avoid a recursion error.
     private User user;
 
     @Column(nullable = false)

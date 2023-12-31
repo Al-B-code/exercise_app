@@ -131,4 +131,20 @@ public class User implements UserDetails {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    public List<DailyEntry> getDailyEntries() {
+        return dailyEntries;
+    }
+
+    public void setDailyEntries(List<DailyEntry> dailyEntries) {
+        this.dailyEntries = dailyEntries;
+    }
+
+    public List<Goal> getGoals() {
+        return goals;
+    }
+
+    public void setGoals(List<Goal> goals) {
+        this.goals = goals;
+    }
 }

@@ -1,5 +1,6 @@
 package com.exerciseapp.exerciseapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.ZonedDateTime;
@@ -14,6 +15,7 @@ public class Goal {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore // This is to avoid recursion error; May need to use jsonViews in the future. Check chatroom backend for howto.
     private User user;
 
     private String Goal;
