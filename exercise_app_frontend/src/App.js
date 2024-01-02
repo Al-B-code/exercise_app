@@ -4,6 +4,7 @@ import ExerciseAppContainer from './containers/ExerciseAppContainer';
 import AuthProvider from './Provider/AuthProvider';
 import Routes from './routes';
 import UserContext from './contexts/UserContext';
+import { UserProvider } from './contexts/UserContext';
 
 
 function App() {
@@ -13,11 +14,11 @@ function App() {
 
   return (
     <>
-    <UserContext.Provider value={{ user, setUser}}>
+  <UserProvider>
     <AuthProvider>
       <Routes />
     </AuthProvider>
-    </UserContext.Provider>
+    </UserProvider>
     </>
   );
 }
