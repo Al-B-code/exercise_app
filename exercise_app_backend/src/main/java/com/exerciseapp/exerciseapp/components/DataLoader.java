@@ -43,9 +43,9 @@ public class DataLoader implements ApplicationRunner {
         List<DailyEntry> DailyEntries = new ArrayList<>();
 
         User user = new User(
-                "firstNameTest",
-                "lastNameTest",
-                "test@email.com",
+                "John",
+                "Doe",
+                "john@email.com",
                 passwordEncoder.encode("1234"), // has to be encoded on the backend otherwise the hashed passwords wont match, will change at one point
                 Role.ADMIN,
                 DailyEntries
