@@ -5,11 +5,11 @@ import { UserContext } from "../contexts/UserContext";
 const UserDashboardContainer = () => {
 
 
-    const { user } = useContext(UserContext);
+    
 
 
 
-    console.log(user);
+    // console.log(user);
 
 
     useEffect(() => {
@@ -23,11 +23,6 @@ const UserDashboardContainer = () => {
     return ( 
         <>
         <DashboardSidebar/>
-        <div>
-            <p>Name: {user.firstname}</p>
-            <p>email: {user.email}</p>
-            <p>Role: {user.role}</p>
-        </div>
         </>
     );
 }
