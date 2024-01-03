@@ -43,9 +43,9 @@ public class DataLoader implements ApplicationRunner {
         List<DailyEntry> DailyEntries = new ArrayList<>();
 
         User user = new User(
-                "firstNameTest",
-                "lastNameTest",
-                "test@email.com",
+                "John",
+                "Doe",
+                "john@email.com",
                 passwordEncoder.encode("1234"), // has to be encoded on the backend otherwise the hashed passwords wont match, will change at one point
                 Role.ADMIN,
                 DailyEntries
@@ -84,6 +84,34 @@ public class DataLoader implements ApplicationRunner {
         );
 
         goalRepository.save(goal);
+
+
+
+
+
+
+
+        User user2 = new User(
+                "Jane",
+                "Doe",
+                "jane@email.com",
+                passwordEncoder.encode("1234"), // has to be encoded on the backend otherwise the hashed passwords wont match, will change at one point
+                Role.USER,
+                DailyEntries
+        );
+
+        userRepository.save(user2);
+
+
+        DailyEntry dailyEntry3 = new DailyEntry(
+                user2,
+                ZonedDateTime.now(),
+                50D,
+                1200,
+                6,
+                "Feeling okay"
+        );
+        dailyEntryRepository.save(dailyEntry3);
 
 
     }

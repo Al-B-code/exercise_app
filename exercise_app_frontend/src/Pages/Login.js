@@ -1,10 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Provider/AuthProvider";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 const Login = () => {
 
+
+
     const { setToken, token, headers } = useAuth();
+
+    const { loginUser } = useContext(UserContext);
+
     const navigate = useNavigate();
 
 
@@ -21,10 +27,16 @@ const Login = () => {
         setUserLoginInformation(copiedUserLoginInformation);
         };
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault()
-        fetchToken(userLoginInformation);
-        console.log(token);
+
+        try {
+            await fetchToken(userLoginInformation);
+
+            navigate("/", { replace: true });
+        } catch (error) {
+            console.log("Error during login: ", error);
+        }
         navigate("/", {replace: true});
     };
 
@@ -37,24 +49,46 @@ const Login = () => {
             body: JSON.stringify(userDetails)
             })
             const data = await response.json();
-            console.log(data);
             setToken(data);
+            fetchUser(data.token);
             console.log("this is the data", data);
-            console.log("This is the headers.Authorization", headers.Authorization)
+            // console.log("This is the token set", token);
         } catch (error) {
             console.error("error logging in: ", error)
         }
-    } 
 
-    // console.log(headers.Authorization);
+    }
+    
+    const fetchUser = async (token) => {
+        try {
+            const response = await fetch('http://localhost:8080/user', {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                },
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error, Status: ${response.status}`);
+            }
+            const data = await response.json()
+            // console.log("This should be user data: " + JSON.stringify(data));
+            loginUser(data);
+        } catch (error) {
+            console.error("error fetching user: ", error)
+        }
+    }
+
+    // useEffect(() => {
+    //     // This will log the updated token whenever it changes
+
+
+    //         console.log("Token updated:", token);
+
+    // }, [token]);
 
 
 
-    // // setTimeout function is used to simulate a delay of 3 seconds before calling the handleLogin function.
-    // setTimeout(() => {
-    //     handleLogin();
-    //     console.log("hello from setTimeout.")
-    // }, 3 * 1000); // 3 x 1000 milliseconds.
+
 
 
 
@@ -87,5 +121,5 @@ const Login = () => {
         </>
     );
 }
- 
+
 export default Login;
