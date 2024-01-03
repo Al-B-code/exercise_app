@@ -17,20 +17,16 @@ const setToken = (newToken) => {
 };
 
 // set headers to null by default. will be changed in the useEffect.
-let headers = { 
+const headers = { 
     Authorization: null,
 };
 
 useEffect(() => {
     if (token) {
-        headers = {
-            Authorization: `Bearer ${token}`,
-        };
+        headers.Authorization = `Bearer ${token}`;
         localStorage.setItem('token', token);
     } else {
-        headers = {
-            Authorization: null,
-        };
+            headers.Authorization = null;
         // console.log("hello from else statement in useEffect of AuthProvider")
         localStorage.removeItem('token');
     }

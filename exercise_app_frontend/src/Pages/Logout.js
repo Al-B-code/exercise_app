@@ -15,7 +15,7 @@ const Logout = () => {
         navigate("/", { replace: true});
     };
 
-    console.log("This is the test token: " + token);
+
 
     // setTimeout(() => {
     //     handleLogout();
