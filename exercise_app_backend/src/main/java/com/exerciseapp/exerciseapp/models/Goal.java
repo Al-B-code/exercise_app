@@ -24,6 +24,8 @@ public class Goal {
 
     private ZonedDateTime endDate;
 
+    private Boolean isComplete;
+
     public Goal() {
     }
 
@@ -32,6 +34,7 @@ public class Goal {
         this.Goal = goal;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.isComplete = false;
     }
 
     public Long getId() {
@@ -72,5 +75,13 @@ public class Goal {
 
     public void setEndDate(ZonedDateTime endDate) {
         this.endDate = endDate;
+    }
+
+    public Boolean getComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(Boolean complete) {
+        isComplete = complete;
     }
 }
