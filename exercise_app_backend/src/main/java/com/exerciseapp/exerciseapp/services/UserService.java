@@ -46,6 +46,27 @@ public class UserService {
     }
 
 
+    public ResponseEntity<UserDTO> getUserDTOById(Long id) {
+        Optional<User> userOptional = userRepository.findById(id);
+        if (userOptional.isEmpty()) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND); // todo make an appropriate replyDTO
+        }
+
+        User user = userOptional.get();
+
+        // todo create a helper function to convert a user to userDTO
+        UserDTO userDTO = new UserDTO(
+                user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getEmail(),
+                user.getRole()
+        );
+        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+
+    }
+
+
 
 
 }
