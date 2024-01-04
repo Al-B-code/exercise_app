@@ -1,5 +1,6 @@
 package com.exerciseapp.exerciseapp.controllers;
 
+import com.exerciseapp.exerciseapp.dtos.UserDTO;
 import com.exerciseapp.exerciseapp.models.User;
 import com.exerciseapp.exerciseapp.repositories.UserRepository;
 import com.exerciseapp.exerciseapp.services.UserService;
@@ -32,18 +33,23 @@ public class UserController {
 
 
     @GetMapping
-    public ResponseEntity<User> getUserDetails(@RequestHeader(name = "Authorization") String authorizationHeader) {
+    public ResponseEntity<UserDTO> getUserDetails(@RequestHeader(name = "Authorization") String authorizationHeader) {
         String token = null;
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             token = authorizationHeader.substring(7);
         }
 
         User user = userService.getUser(token);
+        return userService.getUserDTO(user);
 
-        if (user == null) {
-            return new ResponseEntity<>(user, HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<UserDTO> getUserById(@RequestHeader(name = "Authorization") String authorizationHeader) {
+        String token = null; // probably should create a helper function for this. There is tokenValid in jwtService should refactor for this.
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            token = authorizationHeader.substring(7);
         }
-        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
 
