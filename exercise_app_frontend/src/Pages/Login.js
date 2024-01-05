@@ -49,7 +49,7 @@ const Login = () => {
             body: JSON.stringify(userDetails)
             })
             const data = await response.json();
-            setToken(data);
+            setToken(data.token);
             fetchUser(data.token);
             console.log("this is the data", data);
             // console.log("This is the token set", token);
