@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -53,7 +55,7 @@ public class UserController {
         User userMakingRequest = userService.getUser(token);
 
         // checks if user is admin before return user details. probably a better way using grantedAuthorities in spring security.
-        if (userMakingRequest.getRole() == Role.ADMIN) {
+        if (userMakingRequest.getRole() == Role.ADMIN || Objects.equals(userMakingRequest.getId(), id)) {
             return userService.getUserDTOById(id);
         } else {
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
