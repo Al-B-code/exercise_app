@@ -67,7 +67,11 @@ const UserProfileContainer = () => {
                 <p>Role: {userProfile.role}</p>
             </>
         ) : (
-            <p>Loading...</p>
+            error ? (
+                <></>
+            ) : (
+                <p>Loading...</p>
+            )
         )}
     </div>
     );
