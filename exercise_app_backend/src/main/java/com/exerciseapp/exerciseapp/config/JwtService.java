@@ -1,10 +1,14 @@
 package com.exerciseapp.exerciseapp.config;
 
+import com.exerciseapp.exerciseapp.models.User;
+import com.exerciseapp.exerciseapp.services.UserService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +24,9 @@ import java.util.function.Function;
 public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jjwt-jackson and jjwt-impl
 
 
+
+
+
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
@@ -32,6 +39,8 @@ public class JwtService { // Jwt service needs 3 main dependencies. jjwt-api, jj
     }
 
     public String generateToken(UserDetails userDetails) {
+
+
         return generateToken(new HashMap<>(), userDetails); // this generate token method can be reused later without extra claims like here for example compared to below.
     }
 
