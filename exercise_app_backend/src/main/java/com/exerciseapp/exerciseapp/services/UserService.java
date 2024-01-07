@@ -29,6 +29,19 @@ public class UserService {
         return user.orElse(null);
     }
 
+    public User getUserByEmail(String email) {
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        try {
+            if (userOptional.isEmpty()) {
+                throw new RuntimeException("No User found");
+            }
+            return userOptional.get();
+        } catch (RuntimeException e) {
+            System.out.println("Error: " + e.getMessage());
+            return null;
+        }
+    }
+
     public ResponseEntity<UserDTO> getUserDTO(User user) {
         if (user == null) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
