@@ -1,4 +1,7 @@
-const WeightTrackerTile = () => {
+const WeightTrackerTile = ( { dailyEntries } ) => {
+
+
+
     
     
     
