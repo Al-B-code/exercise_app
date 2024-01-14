@@ -8,6 +8,7 @@ import { UserProvider } from './contexts/UserContext';
 import { useState } from 'react';
 
 
+
 function App() {
 
   const [user, setUser] = useState(null);
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <>
-  <UserProvider>
+    <UserProvider>
     <AuthProvider>
       <Routes />
     </AuthProvider>

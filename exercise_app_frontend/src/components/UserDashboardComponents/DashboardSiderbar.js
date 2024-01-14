@@ -11,7 +11,7 @@ const DashboardSidebar = () => {
 
     const { user } = useContext(UserContext);
 
-    console.log(user);
+    // console.log(user);
 
 
 
