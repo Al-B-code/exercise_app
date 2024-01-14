@@ -12,6 +12,7 @@ const { setToken, token, headers } = useAuth();
 const [dailyEntries, setDailyEntries] = useState();
 
 
+
     useEffect(() => {
 
         fetchDailyEntries();
