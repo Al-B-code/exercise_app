@@ -1,6 +1,7 @@
 package com.exerciseapp.exerciseapp.controllers;
 
 import com.exerciseapp.exerciseapp.config.JwtService;
+import com.exerciseapp.exerciseapp.dtos.DailyEntryDTO;
 import com.exerciseapp.exerciseapp.models.DailyEntry;
 import com.exerciseapp.exerciseapp.models.User;
 import com.exerciseapp.exerciseapp.services.DailyEntryService;
@@ -37,7 +38,7 @@ public class DailyEntryController {
     }
 
     @PutMapping
-    public ResponseEntity<DailyEntry> createNewDailyEntry (@RequestBody DailyEntry dailyEntry) {
+    public ResponseEntity<DailyEntry> createNewDailyEntry (@RequestBody DailyEntryDTO dailyEntry) {
         return dailyEntryService.addOrUpdateDailyEntry(dailyEntry);
     }
 

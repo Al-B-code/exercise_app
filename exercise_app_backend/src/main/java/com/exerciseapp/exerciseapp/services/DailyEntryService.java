@@ -1,8 +1,10 @@
 package com.exerciseapp.exerciseapp.services;
 
+import com.exerciseapp.exerciseapp.dtos.DailyEntryDTO;
 import com.exerciseapp.exerciseapp.models.DailyEntry;
 import com.exerciseapp.exerciseapp.models.User;
 import com.exerciseapp.exerciseapp.repositories.DailyEntryRepository;
+import com.exerciseapp.exerciseapp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,10 +23,14 @@ public class DailyEntryService {
     @Autowired
     private DailyEntryRepository dailyEntryRepository;
 
+    @Autowired
+    private UserRepository userRepository;
 
-    public ResponseEntity<DailyEntry> addOrUpdateDailyEntry(DailyEntry entry) {
+    public ResponseEntity<DailyEntry> addOrUpdateDailyEntry(DailyEntryDTO entry) {
 
-        Optional<DailyEntry> existingEntryOptional = dailyEntryRepository.findByUserAndDate(entry.getUser(), entry.getDate());
+        User user = userRepository.findById(entry.getUserId()).get(); // todo add error handling
+
+        Optional<DailyEntry> existingEntryOptional = dailyEntryRepository.findByUserAndDate(user, entry.getDate());
 
         if (existingEntryOptional.isPresent()) {
             // extracts existing entry out of optional.
@@ -34,10 +40,21 @@ public class DailyEntryService {
             existingEntry.setCalorieIntake((entry.getCalorieIntake()));
             existingEntry.setSleepDuration(entry.getSleepDuration());
             existingEntry.setMood((entry.getMood()));
+            existingEntry.setUser(user);
             return new ResponseEntity<>(dailyEntryRepository.save(existingEntry), HttpStatus.OK);
         } else {
             // creates a new entry
-            return new ResponseEntity<>(dailyEntryRepository.save(entry), HttpStatus.CREATED); // on the frontend use the status code to say whether entry is updated or not.
+
+            DailyEntry dailyEntry = new DailyEntry(
+                    user,
+                    entry.getDate(),
+                    entry.getWeight(),
+                    entry.getCalorieIntake(),
+                    entry.getSleepDuration(),
+                    entry.getMood()
+            );
+
+            return new ResponseEntity<>(dailyEntryRepository.save(dailyEntry), HttpStatus.CREATED); // on the frontend use the status code to say whether entry is updated or not.
         }
     }
 
