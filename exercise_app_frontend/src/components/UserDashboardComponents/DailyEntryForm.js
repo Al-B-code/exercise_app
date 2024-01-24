@@ -6,12 +6,12 @@ const DailyEntryForm = () => {
 
     const { user } = useContext(UserContext);
     const { setToken, token, headers } = useAuth();
-    const [userId, setUserId] = useState(1);
+
 
 
 
     const [dailyEntry, setDailyEntry] = useState({
-        userId: 1,
+        // userId: 1, // change this to userId upon submit. // possibly use token 
         date: new Date(), // todo: will need to change this mechanism for when updating old entries.
         weight: 0,
         calorieIntake: 0,
@@ -54,7 +54,6 @@ const DailyEntryForm = () => {
         submitDailyEntry(token) //add more error handling logic.
         setDailyEntry(
             {
-                user: null,
                 date: new Date(), // todo: will need to change this mechanism for when updating old entries.
                 weight: 0,
                 calorieIntake: 0,

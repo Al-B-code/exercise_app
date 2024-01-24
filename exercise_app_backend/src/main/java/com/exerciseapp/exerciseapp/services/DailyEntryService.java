@@ -26,9 +26,7 @@ public class DailyEntryService {
     @Autowired
     private UserRepository userRepository;
 
-    public ResponseEntity<DailyEntry> addOrUpdateDailyEntry(DailyEntryDTO entry) {
-
-        User user = userRepository.findById(entry.getUserId()).get(); // todo add error handling
+    public ResponseEntity<DailyEntry> addOrUpdateDailyEntry(DailyEntryDTO entry, User user) {
 
         Optional<DailyEntry> existingEntryOptional = dailyEntryRepository.findByUserAndDate(user, entry.getDate());
 

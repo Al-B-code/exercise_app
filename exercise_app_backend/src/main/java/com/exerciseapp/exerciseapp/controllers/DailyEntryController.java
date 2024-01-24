@@ -38,8 +38,17 @@ public class DailyEntryController {
     }
 
     @PutMapping
-    public ResponseEntity<DailyEntry> createNewDailyEntry (@RequestBody DailyEntryDTO dailyEntry) {
-        return dailyEntryService.addOrUpdateDailyEntry(dailyEntry);
+    public ResponseEntity<DailyEntry> createNewDailyEntryOrUpdate (@RequestBody DailyEntryDTO dailyEntry, @RequestHeader(name = "Authorization") String authorizationHeader) {
+
+        String token = null; // probably should create a helper function for this. There is tokenValid in jwtService should refactor for this.
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            token = authorizationHeader.substring(7);
+        }
+        // only admins should be able to visit any profile. If not admin should return invalid permissions.
+        User userMakingRequest = userService.getUser(token);
+
+
+        return dailyEntryService.addOrUpdateDailyEntry(dailyEntry, userMakingRequest);
     }
 
 
