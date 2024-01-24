@@ -4,6 +4,8 @@ import com.exerciseapp.exerciseapp.models.DailyEntry;
 import com.exerciseapp.exerciseapp.models.User;
 import com.exerciseapp.exerciseapp.repositories.DailyEntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
@@ -20,7 +22,7 @@ public class DailyEntryService {
     private DailyEntryRepository dailyEntryRepository;
 
 
-    public DailyEntry addOrUpdateDailyEntry(DailyEntry entry) {
+    public ResponseEntity<DailyEntry> addOrUpdateDailyEntry(DailyEntry entry) {
 
         Optional<DailyEntry> existingEntryOptional = dailyEntryRepository.findByUserAndDate(entry.getUser(), entry.getDate());
 
@@ -32,10 +34,10 @@ public class DailyEntryService {
             existingEntry.setCalorieIntake((entry.getCalorieIntake()));
             existingEntry.setSleepDuration(entry.getSleepDuration());
             existingEntry.setMood((entry.getMood()));
-            return dailyEntryRepository.save(existingEntry);
+            return new ResponseEntity<>(dailyEntryRepository.save(existingEntry), HttpStatus.OK);
         } else {
             // creates a new entry
-            return dailyEntryRepository.save(entry);
+            return new ResponseEntity<>(dailyEntryRepository.save(entry), HttpStatus.CREATED); // on the frontend use the status code to say whether entry is updated or not.
         }
     }
 

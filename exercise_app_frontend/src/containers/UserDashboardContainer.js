@@ -4,6 +4,7 @@ import { UserContext } from "../contexts/UserContext";
 import WeightTrackerTile from "../components/UserDashboardComponents/WeightTrackerTile";
 import GoalsTile from "../components/UserDashboardComponents/GoalsTile";
 import { useAuth } from "../Provider/AuthProvider";
+import DailyEntryForm from "../components/UserDashboardComponents/DailyEntryForm";
 
 const UserDashboardContainer = () => {
 
@@ -54,6 +55,7 @@ const fetchDailyEntries = async () => {
         <DashboardSidebar/>
         <WeightTrackerTile dailyEntries={dailyEntries}/>
         <GoalsTile/>
+        <DailyEntryForm/>
         </>
     );
 }

@@ -3,9 +3,7 @@ package com.exerciseapp.exerciseapp.controllers;
 import com.exerciseapp.exerciseapp.dtos.UserDTO;
 import com.exerciseapp.exerciseapp.models.Role;
 import com.exerciseapp.exerciseapp.models.User;
-import com.exerciseapp.exerciseapp.repositories.UserRepository;
 import com.exerciseapp.exerciseapp.services.UserService;
-import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -61,8 +59,9 @@ public class UserController {
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
 
-
     }
+
+
 
 
 
