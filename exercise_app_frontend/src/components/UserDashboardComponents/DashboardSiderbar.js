@@ -1,5 +1,6 @@
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
+import Logout from "../../Pages/Logout";
 
 
 
@@ -17,7 +18,7 @@ const DashboardSidebar = () => {
 
     return ( 
 
-        <div className="nav-bar">
+        <div className="side-bar">
         <p>This will be the sticky sidebar</p>
 
         <div className="user-details">
@@ -33,6 +34,9 @@ const DashboardSidebar = () => {
                 <li>Settings</li>
             </ul>
         </nav>
+
+        <Logout/>
+
         </div>
 
 

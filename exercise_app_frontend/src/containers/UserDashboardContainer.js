@@ -6,6 +6,7 @@ import GoalsTile from "../components/UserDashboardComponents/GoalsTile";
 import { useAuth } from "../Provider/AuthProvider";
 import DailyEntryForm from "../components/UserDashboardComponents/DailyEntryForm";
 
+
 const UserDashboardContainer = () => {
 
 const { setToken, token, headers } = useAuth();
@@ -51,12 +52,14 @@ const fetchDailyEntries = async () => {
 
 
     return ( 
-        <>
-        <DashboardSidebar/>
-        <WeightTrackerTile dailyEntries={dailyEntries}/>
-        <GoalsTile/>
-        <DailyEntryForm/>
-        </>
+        <div className="user-dashboard-container">
+            <DashboardSidebar/>
+        <div className="main">
+            <WeightTrackerTile dailyEntries={dailyEntries}/>
+            <GoalsTile/>
+        </div>
+        {/* <DailyEntryForm/> */}
+        </div>
     );
 }
 
