@@ -77,7 +77,7 @@ const DailyEntryForm = () => {
 
     return ( 
         <form id="daily-entry-form" onSubmit={handleSubmit}>
-            <p>Registration Page</p>
+            <p>Submit your daily entry</p>
             <label htmlFor="daily-entry-form">Please create your daily entry</label>
 
             <input

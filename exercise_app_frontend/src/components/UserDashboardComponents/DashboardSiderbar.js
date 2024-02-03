@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
 
     return ( 
 
-        <>
+        <div className="nav-bar">
         <p>This will be the sticky sidebar</p>
 
         <div className="user-details">
@@ -33,7 +33,7 @@ const DashboardSidebar = () => {
                 <li>Settings</li>
             </ul>
         </nav>
-        </>
+        </div>
 
 
 
