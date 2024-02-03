@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Provider/AuthProvider";
+import "../styles/UserDashboard.css"
 
 
 
@@ -23,7 +24,7 @@ const Logout = () => {
     
     return ( 
         <>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} id="logout-button">Logout</button>
         </>
 
     );

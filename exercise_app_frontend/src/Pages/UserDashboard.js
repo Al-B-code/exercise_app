@@ -1,5 +1,5 @@
 import UserDashboardContainer from "../containers/UserDashboardContainer";
-import Logout from "./Logout";
+import Logout from "../components/Logout";
 import "../styles/UserDashboard.css";
 
 

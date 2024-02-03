@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"; // will 
 import { useAuth } from "../Provider/AuthProvider"; // allows for access to the authentication Context.
 import { ProtectedRoute } from "./ProtectedRoute"; // allows us to use ProtectedRoutes as a wrapper for authenticated routes.
 import Login from "../Pages/Login";
-import Logout from "../Pages/Logout";
+import Logout from "../components/Logout"
 import Register from "../Pages/Register";
 import UserDashboard from "../Pages/UserDashboard";
 import UserProfile from "../Pages/UserProfile";

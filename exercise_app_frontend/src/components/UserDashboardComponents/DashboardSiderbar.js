@@ -1,11 +1,13 @@
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
-import Logout from "../../Pages/Logout";
+import Logout from "../Logout";
+import DailyEntryModal from "./DailyEntryModal";
+import "../../styles/UserDashboard.css"
 
 
 
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({ setIsOpen, isOpen }) => {
 
 
 
@@ -34,6 +36,9 @@ const DashboardSidebar = () => {
                 <li>Settings</li>
             </ul>
         </nav>
+        <button id="daily-entry-modal-button" onClick={() => setIsOpen(true)}>Submit a daily entry</button>
+        {isOpen && <DailyEntryModal setIsOpen={setIsOpen} />}
+
 
         <Logout/>
 

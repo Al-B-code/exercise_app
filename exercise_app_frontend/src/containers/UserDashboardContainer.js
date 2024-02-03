@@ -13,6 +13,8 @@ const { setToken, token, headers } = useAuth();
 
 const [dailyEntries, setDailyEntries] = useState();
 
+const [isOpen, setIsOpen] = useState(false);
+
 
 
     useEffect(() => {
@@ -53,7 +55,7 @@ const fetchDailyEntries = async () => {
 
     return ( 
         <div className="user-dashboard-container">
-            <DashboardSidebar/>
+            <DashboardSidebar setIsOpen={setIsOpen} isOpen={isOpen}/>
         <div className="main">
             <WeightTrackerTile dailyEntries={dailyEntries}/>
             <GoalsTile/>
