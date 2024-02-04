@@ -21,6 +21,15 @@ Crimson = #D72638
     flex-direction: column;
 }
 
+.side-bar > nav {
+    margin-bottom: 5%;
+}
+
+.side-bar > .user-details {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
 #daily-entry-modal-button {
     cursor: pointer;
     font-weight: 500;

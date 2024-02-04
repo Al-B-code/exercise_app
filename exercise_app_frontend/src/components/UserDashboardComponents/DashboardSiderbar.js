@@ -21,7 +21,7 @@ const DashboardSidebar = ({ setIsOpen, isOpen }) => {
     return ( 
 
         <div className="side-bar">
-        <p>This will be the sticky sidebar</p>
+        <p>Welcome</p>
 
         <div className="user-details">
             {user ? <p>name: {user.firstName}</p> : <p>Loading</p>}
