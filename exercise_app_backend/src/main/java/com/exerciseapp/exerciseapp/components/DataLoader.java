@@ -54,8 +54,8 @@ public class DataLoader implements ApplicationRunner {
 
         DailyEntry dailyEntry1 = new DailyEntry(
                 user,
-                ZonedDateTime.now(),
-                110D,
+                ZonedDateTime.of(2023, 9, 30, 12, 30, 0, 0, ZoneId.of("UTC")),
+                112D,
                 1500,
                 8,
                 "Feeling good"
@@ -64,17 +64,28 @@ public class DataLoader implements ApplicationRunner {
         dailyEntryRepository.save(dailyEntry1);
 
 
-        ZonedDateTime date = ZonedDateTime.of(2023, 12, 30, 12, 30, 0, 0, ZoneId.of("UTC"));
+        ZonedDateTime date = ZonedDateTime.of(2023, 10, 30, 12, 30, 0, 0, ZoneId.of("UTC"));
 
         DailyEntry dailyEntry2 = new DailyEntry(
                 user,
                 date,
-                112D,
+                110D,
                 1500,
                 8,
                 "Feeling great"
         );
         dailyEntryRepository.save(dailyEntry2);
+
+        DailyEntry dailyEntry3 = new DailyEntry(
+                user,
+                ZonedDateTime.of(2023, 11, 30, 12, 30, 0, 0, ZoneId.of("UTC")),
+                108D,
+                1500,
+                7,
+                "Feeling ok"
+        );
+        dailyEntryRepository.save(dailyEntry3);
+
 
         Goal goal = new Goal(
                 user,
@@ -103,7 +114,7 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(user2);
 
 
-        DailyEntry dailyEntry3 = new DailyEntry(
+        DailyEntry dailyEntry4 = new DailyEntry(
                 user2,
                 ZonedDateTime.now(),
                 50D,
@@ -111,7 +122,7 @@ public class DataLoader implements ApplicationRunner {
                 6,
                 "Feeling okay"
         );
-        dailyEntryRepository.save(dailyEntry3);
+        dailyEntryRepository.save(dailyEntry4);
 
 
     }
