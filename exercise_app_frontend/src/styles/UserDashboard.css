@@ -1,0 +1,88 @@
+/* 
+Charcoal = #28536B
+Dark Purple = #28112B
+Air Superiority Blue = #7EA8BE
+Isabelline = #F6F0ED
+Crimson = #D72638
+*/
+
+.user-dashboard-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-bar {
+    width: 25%;
+    height: 100vh;
+    /* border: 3px solid #28536B; */
+    background-color: #28536B ;
+    color: #F6F0ED;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar > nav {
+    margin-bottom: 5%;
+}
+
+.side-bar > .user-details {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+#daily-entry-modal-button {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+   
+    margin-top: -7px;
+    margin-right: 7px;
+    margin-left: 7px;
+
+}
+
+#daily-entry-modal-button:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: translate(4px, 4px);
+  }
+
+
+  #logout-button {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    margin-top: 10px;
+    margin-right: 7px;
+    margin-left: 7px;
+
+}
+
+#logout-button:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: translate(4px, 4px);
+  }
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+

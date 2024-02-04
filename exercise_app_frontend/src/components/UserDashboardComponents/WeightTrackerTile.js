@@ -38,12 +38,10 @@ const WeightTrackerTile = ( { dailyEntries } ) => {
     
     
     return (
-
-        <>
-        <p>Hello from WeightTrackerTile</p>
-        <WeightLineChart chartData={chartData}/>
-        </>
-
+        <div className="weight-tracker-container">
+            <p>Hello from WeightTrackerTile</p>
+            <WeightLineChart chartData={chartData}/>
+        </div>
     );
 }
  

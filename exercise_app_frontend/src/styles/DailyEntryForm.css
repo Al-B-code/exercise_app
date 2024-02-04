@@ -1,0 +1,49 @@
+#daily-entry-form {
+
+    height: 100%;
+    max-height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input[type=text] {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
+
+input[type=number] {
+padding:10px;
+border:0;
+box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+form > input {
+    margin-bottom: 5%;
+}
+
+form > button {
+    /* transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6); */
+
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    margin-top: 10px;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+form > button:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: translate(4px, 4px);
+}

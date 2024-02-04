@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -41,3 +47,5 @@
 width: 400px;
 height: 400px;
 }
+
+

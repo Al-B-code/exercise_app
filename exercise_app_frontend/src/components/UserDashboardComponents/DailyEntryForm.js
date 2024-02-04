@@ -1,6 +1,7 @@
 import { UserContext } from "../../contexts/UserContext";
 import { useState, useContext, useEffect } from "react";
 import { useAuth } from "../../Provider/AuthProvider";
+import "../../styles/DailyEntryForm.css"
 
 const DailyEntryForm = () => {
 
@@ -19,10 +20,10 @@ const DailyEntryForm = () => {
         mood: "",
     });
 
-    useEffect(() => {
-        console.log(user, "this is the user")
+    // useEffect(() => {
+    //     console.log(user, "this is the user")
 
-    })
+    // })
 
 
     const submitDailyEntry = async (token) => {
@@ -77,8 +78,8 @@ const DailyEntryForm = () => {
 
     return ( 
         <form id="daily-entry-form" onSubmit={handleSubmit}>
-            <p>Submit your daily entry</p>
-            <label htmlFor="daily-entry-form">Please create your daily entry</label>
+
+            <label htmlFor="weight">Please enter your weight (Kg)</label>
 
             <input
                 id="weight"
@@ -87,8 +88,11 @@ const DailyEntryForm = () => {
                 placeholder="Please Enter Your Weight"
                 value={dailyEntry.weight}
                 onChange={handleDailyEntryFormChange}
+                min="30"
+                required
             />
-
+            
+            <label htmlFor="calorie-intake">Please your daily calorie intake (kcal)</label>
             <input
                 id="calorieIntake"
                 name="calorieIntake"
@@ -96,8 +100,10 @@ const DailyEntryForm = () => {
                 placeholder="Please Enter Your Calorie Intake"
                 value={dailyEntry.calorieIntake}
                 onChange={handleDailyEntryFormChange}
+                required
             />
 
+            <label htmlFor="sleep-duration">Please enter your sleep duration (hours)</label>
             <input
                 id="sleepDuration"
                 name="sleepDuration"
@@ -105,8 +111,12 @@ const DailyEntryForm = () => {
                 placeholder="Please Enter Your Sleep Duration"
                 value={dailyEntry.sleepDuration}
                 onChange={handleDailyEntryFormChange}
+                min="1"
+                max="24"
+                required
             />
-
+            
+            <label htmlFor="mood">Please describe your mood</label>
             <input
                 id="mood"
                 name="mood"
@@ -114,6 +124,7 @@ const DailyEntryForm = () => {
                 placeholder="Please Enter Your Mood"
                 value={dailyEntry.mood}
                 onChange={handleDailyEntryFormChange}
+                required
             />
 
 

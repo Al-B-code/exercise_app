@@ -1,10 +1,13 @@
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
+import Logout from "../Logout";
+import DailyEntryModal from "./DailyEntryModal";
+import "../../styles/UserDashboard.css"
 
 
 
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({ setIsOpen, isOpen }) => {
 
 
 
@@ -17,8 +20,8 @@ const DashboardSidebar = () => {
 
     return ( 
 
-        <div className="nav-bar">
-        <p>This will be the sticky sidebar</p>
+        <div className="side-bar">
+        <p>Welcome</p>
 
         <div className="user-details">
             {user ? <p>name: {user.firstName}</p> : <p>Loading</p>}
@@ -33,6 +36,12 @@ const DashboardSidebar = () => {
                 <li>Settings</li>
             </ul>
         </nav>
+        <button id="daily-entry-modal-button" onClick={() => setIsOpen(true)}>Submit a daily entry</button>
+        {isOpen && <DailyEntryModal setIsOpen={setIsOpen} />}
+
+
+        <Logout/>
+
         </div>
 
 
