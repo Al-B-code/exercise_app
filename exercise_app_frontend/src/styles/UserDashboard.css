@@ -50,7 +50,7 @@ Crimson = #D72638
 
 #daily-entry-modal-button:hover {
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    transform: translate(4px, 4px);
+    transform: scale(1.05);
   }
 
 
@@ -73,7 +73,7 @@ Crimson = #D72638
 
 #logout-button:hover {
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    transform: translate(4px, 4px);
+    transform: scale(1.05);
   }
 
 .main {
