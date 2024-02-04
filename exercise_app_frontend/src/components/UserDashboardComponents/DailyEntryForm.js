@@ -1,6 +1,7 @@
 import { UserContext } from "../../contexts/UserContext";
 import { useState, useContext, useEffect } from "react";
 import { useAuth } from "../../Provider/AuthProvider";
+import "../../styles/DailyEntryForm.css"
 
 const DailyEntryForm = () => {
 
@@ -88,7 +89,8 @@ const DailyEntryForm = () => {
                 value={dailyEntry.weight}
                 onChange={handleDailyEntryFormChange}
             />
-
+            
+            <label htmlFor="calorie-intake">Please your daily calorie intake</label>
             <input
                 id="calorieIntake"
                 name="calorieIntake"
@@ -98,6 +100,7 @@ const DailyEntryForm = () => {
                 onChange={handleDailyEntryFormChange}
             />
 
+            <label htmlFor="sleep-duration">Please enter your sleep duration</label>
             <input
                 id="sleepDuration"
                 name="sleepDuration"
@@ -106,7 +109,8 @@ const DailyEntryForm = () => {
                 value={dailyEntry.sleepDuration}
                 onChange={handleDailyEntryFormChange}
             />
-
+            
+            <label htmlFor="sleep-duration">Please enter your mood</label>
             <input
                 id="mood"
                 name="mood"

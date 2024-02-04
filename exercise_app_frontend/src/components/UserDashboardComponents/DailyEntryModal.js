@@ -21,8 +21,8 @@ const Modal = ({ setIsOpen }) => {
                     <div className="modal-content">
                         <DailyEntryForm/>
                     </div>
-                    <div className="modal-actions">
-                        {/* <div className="actions-container">
+                    {/* <div className="modal-actions">
+                        <div className="actions-container">
                         <button className="delete-button" onClick={() => setIsOpen(false)}>
                             Delete
                         </button>
@@ -30,9 +30,9 @@ const Modal = ({ setIsOpen }) => {
                             Cancel
                         </button>
 
-                        </div> */}
+                        </div>
 
-                    </div>
+                    </div> */}
 
             </div>
         </div>
