@@ -106,6 +106,7 @@ Crimson = #D72638
     transition: 0.5s ease-in-out;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
     transform: scale(1.05);
+    margin: 10px;
 }
 
 
