@@ -11,5 +11,7 @@ public interface GoalRepository extends JpaRepository<Goal, Long> {
 
     Optional<List<Goal>> findAllByUser(User user);
 
+    Optional<List<Goal>> findAllByUserAndIsComplete(User user, Boolean isComplete);
+
     // todo create a query to find goals between a certain date?
 }

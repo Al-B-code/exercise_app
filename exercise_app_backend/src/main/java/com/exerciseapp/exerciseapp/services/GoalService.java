@@ -25,4 +25,9 @@ public class GoalService {
 
     }
 
+    public List<Goal> getGoalsListByCompletionStatus(User user, Boolean isComplete) {
+        List<Goal> goalsList = goalRepository.findAllByUserAndIsComplete(user, isComplete).get();
+        return  goalsList;
+    }
+
 }
