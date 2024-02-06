@@ -26,16 +26,20 @@ const WeightLineChart = ({ chartData }) => {
               time: {
                 unit: "day", // Set the time unit to "day" to display dates
                 displayFormats: {
-                  day: "dd MM yyyy", // Format for "month day year"
+                  day: "dd-MM-yy", // Format for "month day year"
                 },
               },
+              ticks: {
+                // autoSkip: true,
+                // maxTicksLimit: 10,
+            }
             },
             y: {
               title: {
                 display: true,
                 text: 'Weight (Kg)'
               }
-            }
+            },
           },
           animations: {
             tension: {
