@@ -80,9 +80,32 @@ Crimson = #D72638
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     padding: 10px;
+    flex-wrap: wrap;
+}
+
+
+.goals-tile-container {
+    display: flex;
+    width: 45%;
+    height: 300px;
+    min-height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    transition: 0.5s ease-in-out;
+    margin: 10px;
+}
+
+.goals-tile-container:hover {
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: scale(1.05);
 }
 
 

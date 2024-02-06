@@ -94,7 +94,24 @@ public class DataLoader implements ApplicationRunner {
                 ZonedDateTime.of(2024, 2, 29, 23, 59, 59, 59, ZoneId.of("UTC"))
         );
 
+        Goal goal2 = new Goal(
+                user,
+                "Run every other day",
+                ZonedDateTime.now(),
+                ZonedDateTime.of(2024, 2, 29, 23, 59, 59, 59, ZoneId.of("UTC"))
+        );
+
+        Goal goal3 = new Goal(
+                user,
+                "Complete Couch to 5k",
+                ZonedDateTime.now(),
+                ZonedDateTime.of(2024, 2, 29, 23, 59, 59, 59, ZoneId.of("UTC"))
+        );
+
         goalRepository.save(goal);
+        goalRepository.save(goal2);
+        goalRepository.save(goal3);
+
 
 
 
