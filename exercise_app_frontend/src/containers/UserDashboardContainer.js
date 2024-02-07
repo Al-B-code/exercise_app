@@ -38,9 +38,12 @@ const fetchDailyEntries = async () => {
             throw new Error(`HTTP error, Status: ${response.status}`);
         }
         const data = await response.json();
+        console.log(data)
         setDailyEntries(data);
+        // console.log(token);
         // console.log("This is the daily entries", data);
     } catch (error) {
+
         console.error("error fetching daily entries: ", error)
         console.log("Error fetching daily entries: ", error)
         // setError(`Error fetching data ${error}`)
