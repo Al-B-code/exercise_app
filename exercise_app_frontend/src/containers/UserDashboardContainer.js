@@ -5,6 +5,7 @@ import WeightTrackerTile from "../components/UserDashboardComponents/WeightTrack
 import GoalsTile from "../components/UserDashboardComponents/GoalsTile";
 import { useAuth } from "../Provider/AuthProvider";
 import DailyEntryForm from "../components/UserDashboardComponents/DailyEntryForm";
+import ExerciseTile from "../components/UserDashboardComponents/ExerciseTile";
 // import "../styles/UserDashboard.css"
 
 
@@ -84,6 +85,7 @@ const fetchGoals = async () => {
         <div className="main">
             <WeightTrackerTile dailyEntries={dailyEntries}/>
             <GoalsTile goals={goals}/>
+            <ExerciseTile/>
         </div>
         {/* <DailyEntryForm/> */}
         </div>

@@ -100,6 +100,11 @@ Crimson = #D72638
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
     transition: 0.5s ease-in-out;
     margin: 10px;
+    overflow: hidden;
+}
+
+.goals-wrapper {
+    overflow-y: auto;
 }
 
 .goals-tile-container:hover {
@@ -107,6 +112,8 @@ Crimson = #D72638
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
     transform: scale(1.05);
     margin: 10px;
+    overflow-y: hidden;
+
 }
 
 

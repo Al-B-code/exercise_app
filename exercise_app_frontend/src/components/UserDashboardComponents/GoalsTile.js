@@ -32,7 +32,9 @@ const GoalsTile = ({ goals }) => {
     
     return (
         <div className="goals-tile-container">
+            <div className="goals-wrapper">
         {goals !== null && goals !== undefined && goals.length > 0 ? generateGoalsComponents() : <p>No goals available</p>}
+            </div>
         </div>
 
     );
