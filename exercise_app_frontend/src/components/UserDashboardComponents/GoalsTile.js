@@ -19,7 +19,7 @@ const GoalsTile = ({ goals }) => {
         return goals.map((goal, index) => (
             <>
             <div className="single-goal">
-                <h2 key={index}>{goal.goal}</h2>
+                <h2 key={goal.id}>{goal.goal}</h2>
                 <p>Start Date: {new Date(goal.startDate).toLocaleDateString()}</p>
                 <p>End Date: {new Date(goal.endDate).toLocaleDateString()}</p>
                 <p>Completion Status: {goal.complete ? "Completed" : "Not Completed"}</p>
