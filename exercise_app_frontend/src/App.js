@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import ExerciseAppContainer from './containers/ExerciseAppContainer';
 import AuthProvider from './Provider/AuthProvider';
 import Routes from './routes';
 import UserContext from './contexts/UserContext';

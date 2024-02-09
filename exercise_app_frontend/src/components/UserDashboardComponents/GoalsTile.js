@@ -17,17 +17,13 @@ const GoalsTile = ({ goals }) => {
     // think of a better name for the goal-tab
     const generateGoalsComponents = () => {
         return goals.map((goal, index) => (
-            
-
             <div className="single-goal" key={goal.id}>
                 <h2>{goal.goal}</h2>
-                {console.log(goal.id)}
-                <p>Start Date: {new Date(goal.startDate).toLocaleDateString()}</p>
-                <p>End Date: {new Date(goal.endDate).toLocaleDateString()}</p>
-                <p>Completion Status: {goal.complete ? "Completed" : "Not Completed"}</p>
+                    <p>Start Date: {new Date(goal.startDate).toLocaleDateString()}</p>
+                    <p>End Date: {new Date(goal.endDate).toLocaleDateString()}</p>
+                    <p>Completion Status: {goal.complete ? "Completed" : "Not Completed"}</p>
                 <hr/>
             </div>
-    
         ));
     }
     
