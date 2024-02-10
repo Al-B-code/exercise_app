@@ -24,6 +24,31 @@
 
   - **GET : "/"**
     - Returns Current User if logged in.
+      - Takes in Authorisation Header to get current user.
+  - **GET : "{id}"**
+    - Returns info for request user based on users permissions. Only Admins can see other profiles as of current.
+      - Takes in Authorisation Header to get current user.
+---
+
+### "/goals/**"
+  - **GET : "/"**
+    - Get goals list of current user.
+      - Takes in Authorisation Header to get current user.
+  - **GET : "/completion-status?isComplete={True or False}**
+    - Will get goals list based on completion status of the goal. Either true or false.
+      - Takes in Authorisation Header to get current user.
+
+---
+
+### "/daily-entries/**"
+  - **GET : "/"**
+    - Get daily entries of current user.
+      - Takes in Authorisation Header to get current user.
+  - **PUT : "/"**
+    - Create a new Daily Entry or Update.
+      - Takes in a request body of a DailyEntryDTO.
+      - Takes in Authorisation Header to get current user.
+
 
 
     
