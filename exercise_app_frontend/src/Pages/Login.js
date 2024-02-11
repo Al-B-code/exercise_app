@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Provider/AuthProvider";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
+import "../styles/LoginPage.css"
+import { Link } from "react-router-dom";
+
 
 const Login = () => {
 
@@ -93,32 +96,48 @@ const Login = () => {
 
 
     return ( 
-        <>
-        <form id="login-form" onSubmit={handleLogin}>
-            <p>Login Page</p>
-            <label htmlFor="login-form">Please enter your details</label>
-            <input
-                id="userEmail"
-                name="email"
-                type="email"
-                placeholder="Please Enter Your Email"
-                value={userLoginInformation.email}
-                onChange={handleUserLoginInformationChange}
-            />
+        <div className="login-page-container">
+            <section className="login-form-container">
+            <h1>Sign in</h1>
+                <form id="login-form" onSubmit={handleLogin}>
+                    <fieldset className="login-form-email-container">
+                        <label htmlFor="login-form-email-input" className="login-form-email-input">Email</label>
+                        <input
+                            id="userEmail"
+                            name="email"
+                            type="email"
+                            placeholder="Please Enter Your Email"
+                            value={userLoginInformation.email}
+                            onChange={handleUserLoginInformationChange}
+                            required
+                        />
+                    </fieldset>
+                    <fieldset className="login-form-password-container">
+                        <label htmlFor="login-form-password-input" className="login-form-password-input">Password</label>
+                        <input
+                            id="userPassword"
+                            name="password"
+                            type="password"
+                            placeholder="Please Enter Your Password"
+                            value={userLoginInformation.password}
+                            onChange={handleUserLoginInformationChange}
+                            required
+                        />
+                    </fieldset>
 
-            <input
-                id="userPassword"
-                name="password"
-                type="password"
-                placeholder="Please Enter Your Password"
-                value={userLoginInformation.password}
-                onChange={handleUserLoginInformationChange}
-            />
+                    <button type="submit">Login</button>
 
-            <button type="submit">Login</button>
-
-        </form>
-        </>
+                </form>
+                <ul>
+                    <li>
+                        <Link>Can't Log in?</Link>
+                    </li>
+                    <li>
+                        <Link>Sign Up For an Account</Link>
+                    </li>
+                </ul>
+            </section>
+        </div>
     );
 }
 
