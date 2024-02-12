@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Provider/AuthProvider";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
@@ -130,10 +130,10 @@ const Login = () => {
                 </form>
                 <ul>
                     <li>
-                        <Link>Can't Log in?</Link>
+                        <NavLink to = "/">Can't Log in?</NavLink>
                     </li>
                     <li>
-                        <Link>Sign Up For an Account</Link>
+                        <NavLink to = "/register">Sign Up For an Account</NavLink>
                     </li>
                 </ul>
             </section>
