@@ -1,5 +1,5 @@
 import { UserContext } from "../../contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Logout from "../Logout";
 import DailyEntryModal from "./DailyEntryModal";
 import "../../styles/UserDashboard.css"
@@ -7,12 +7,14 @@ import "../../styles/UserDashboard.css"
 
 
 
-const DashboardSidebar = ({ setIsOpen, isOpen }) => {
+const DashboardSidebar = () => {
 
 
 
 
     const { user } = useContext(UserContext);
+    const [isOpen, setIsOpen] = useState(false);
+
 
     // console.log(user);
 
