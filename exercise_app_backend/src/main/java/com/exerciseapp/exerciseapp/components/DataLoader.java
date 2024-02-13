@@ -57,7 +57,7 @@ public class DataLoader implements ApplicationRunner {
                 ZonedDateTime.of(2023, 9, 30, 12, 30, 0, 0, ZoneId.of("UTC")),
                 112D,
                 1500,
-                8,
+                8D,
                 "Feeling good"
         );
 
@@ -71,7 +71,7 @@ public class DataLoader implements ApplicationRunner {
                 date,
                 110D,
                 1500,
-                8,
+                8D,
                 "Feeling great"
         );
         dailyEntryRepository.save(dailyEntry2);
@@ -81,7 +81,7 @@ public class DataLoader implements ApplicationRunner {
                 ZonedDateTime.of(2023, 11, 30, 12, 30, 0, 0, ZoneId.of("UTC")),
                 108D,
                 1500,
-                7,
+                7D,
                 "Feeling ok"
         );
         dailyEntryRepository.save(dailyEntry3);
@@ -136,7 +136,7 @@ public class DataLoader implements ApplicationRunner {
                 ZonedDateTime.now(),
                 50D,
                 1200,
-                6,
+                6D,
                 "Feeling okay"
         );
         dailyEntryRepository.save(dailyEntry4);

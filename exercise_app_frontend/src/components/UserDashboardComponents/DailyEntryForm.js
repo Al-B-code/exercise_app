@@ -90,6 +90,7 @@ const DailyEntryForm = () => {
                 value={dailyEntry.weight}
                 onChange={handleDailyEntryFormChange}
                 min="30"
+                step="any"
                 required
             />
             
@@ -114,6 +115,7 @@ const DailyEntryForm = () => {
                 onChange={handleDailyEntryFormChange}
                 min="1"
                 max="24"
+                step="any"
                 required
             />
             

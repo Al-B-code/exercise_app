@@ -28,7 +28,7 @@ public class DailyEntry {
 
     private Integer calorieIntake;
 
-    private Integer sleepDuration;
+    private Double sleepDuration;
 
     private String mood;
 
@@ -36,7 +36,7 @@ public class DailyEntry {
     }
 
     // Will have to default the date submitted to current date in the frontend.
-    public DailyEntry(User user, ZonedDateTime date, Double weight, Integer calorieIntake, Integer sleepDuration, String mood) {
+    public DailyEntry(User user, ZonedDateTime date, Double weight, Integer calorieIntake, Double sleepDuration, String mood) {
         this.user = user;
         this.date = date;
         this.weight = weight;
@@ -85,11 +85,11 @@ public class DailyEntry {
         this.calorieIntake = calorieIntake;
     }
 
-    public Integer getSleepDuration() {
+    public Double getSleepDuration() {
         return sleepDuration;
     }
 
-    public void setSleepDuration(Integer sleepDuration) {
+    public void setSleepDuration(Double sleepDuration) {
         this.sleepDuration = sleepDuration;
     }
 
