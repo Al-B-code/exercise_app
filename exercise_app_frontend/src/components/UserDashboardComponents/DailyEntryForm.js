@@ -12,7 +12,6 @@ const DailyEntryForm = () => {
 
 
     const [dailyEntry, setDailyEntry] = useState({
-        // userId: 1, // change this to userId upon submit. // possibly use token 
         date: new Date(), // todo: will need to change this mechanism for when updating old entries.
         weight: 0,
         calorieIntake: 0,
@@ -28,6 +27,7 @@ const DailyEntryForm = () => {
 
     const submitDailyEntry = async (token) => {
         try {
+            console.log(JSON.stringify(dailyEntry), "this is the stringified data")
             const response = await fetch('http://localhost:8080/daily-entries', {
                 method: "PUT",
                 headers: {
