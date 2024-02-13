@@ -1,5 +1,10 @@
+.home-page-wrapper {
+    background-color: #0066EE;
+    height: 100%;
+}
+
 .home-page-header {
-    height: 10vh;
+    height: 7vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,13 +20,12 @@
 }
 
 .home-page-header.scrolled {
-    height: 7vh;
+    /* height: 10vh;/ */
     background-color: white;
     transition: 0.5s;
     box-shadow: 0px 14px 86px -7px rgba(0,0,0,0.75);
     color:#0066EE
 }
-
 
 .home-page-body-slice {
     width: 100%;
@@ -29,7 +33,7 @@
 }
 
 .header-title {
-    margin-left: 20%;
+    margin-left: 20vw;
 }
 
 .title-login-wrapper {
@@ -39,9 +43,8 @@
     justify-content: space-between;
 }
 
-
 .header-login-nav-button {
-    margin-right: 20%;
+    margin-right: 20vw;
 }
 .login-logo-img {
     max-height: 2rem;
@@ -51,11 +54,81 @@
 }
 
 .home-page-body {
-    margin-top: 5vh;
-    height: 200vh;
+    margin-top: 7vh;
+    height: 100%;
 }
-
 
 #start-today-slice {
+    height: 700px;
+    /* margin-top: 10vh; */
     background: linear-gradient(200.00deg, #0066EE 60%, #9383FB 100%);
 }
+
+.font-light {
+    color: white;
+}
+
+.app-advert {
+
+    padding-top: 5dvh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.hero-phone-img {
+    /* max-width: 60%;
+    max-height: 60%; */
+    width: 250px;
+    /* box-shadow: 0px 14px 86px -7px rgba(0,0,0,0.75); */
+    border-radius: 40px;
+    filter: drop-shadow(20px 40px 30px rgba(0, 0, 0, 0.5));
+}
+
+.app-advert-text {
+    /* max-width: 50%; */
+}
+
+.app-advert-h1 {
+    /* max-width: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.no1-exercise-app {
+    color: #D8D8DC;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.reach-your-goals {
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+.with-myexerciseapp {
+    font-size: 5rem;
+    font-weight: 200;
+}
+
+.advert-tagline {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+#reviews {
+    background-color: #151824;
+    color: aliceblue;
+}
+
+.home-page-footer {
+ 
+}
+
