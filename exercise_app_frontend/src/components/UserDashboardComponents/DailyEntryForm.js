@@ -62,6 +62,7 @@ const DailyEntryForm = () => {
                 mood: "",
             }
         )
+        alert("Daily Entry Submitted")
 
     }
 
