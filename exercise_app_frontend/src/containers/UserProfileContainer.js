@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useAuth } from "../Provider/AuthProvider";
+import { useAuth } from "../provider/AuthProvider";
 
 
 const UserProfileContainer = () => {

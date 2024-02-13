@@ -1,6 +1,6 @@
 import { UserContext } from "../../contexts/UserContext";
 import { useState, useContext, useEffect } from "react";
-import { useAuth } from "../../Provider/AuthProvider";
+import { useAuth } from "../../provider/AuthProvider";
 import "../../styles/DailyEntryForm.css"
 
 const DailyEntryForm = () => {

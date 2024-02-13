@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Provider/AuthProvider";
+import { useAuth } from "../provider/AuthProvider";
 import "../styles/UserDashboard.css"
 
 

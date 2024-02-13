@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import WeightTrackerTile from "../components/UserDashboardComponents/WeightTrackerTile";
 import GoalsTile from "../components/UserDashboardComponents/GoalsTile";
-import { useAuth } from "../Provider/AuthProvider";
+import { useAuth } from "../provider/AuthProvider";
 import DailyEntryForm from "../components/UserDashboardComponents/DailyEntryForm";
 import ExerciseTile from "../components/UserDashboardComponents/ExerciseTile";
 // import "../styles/UserDashboard.css"
@@ -16,7 +16,6 @@ const { setToken, token, headers } = useAuth();
 const [dailyEntries, setDailyEntries] = useState(null);
 const [goals, setGoals] = useState(null);
 
-const [isOpen, setIsOpen] = useState(false);
 
 
 

@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../Provider/AuthProvider";
+import { useAuth } from "../provider/AuthProvider";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import "../styles/LoginPage.css"
