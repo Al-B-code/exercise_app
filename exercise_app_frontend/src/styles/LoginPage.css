@@ -38,9 +38,8 @@
 
 
 
-#login-form > button {
+.login-button {
     margin: 20px 10px;
-    cursor: pointer;
     font-weight: 500;
     padding: 13px 25px;
     border-radius: 15px;
@@ -54,9 +53,12 @@
 }
 
 
-#login-form > button:hover {
+.login-button:hover {
+     
+    cursor: pointer;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
     background: #0f4cc6;
+
 }
 
 #login-form {

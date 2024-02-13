@@ -41,15 +41,20 @@ const Home = () => {
             <div className="home-page-body">
                 <section className="home-page-body-slice" id="start-today-slice">
                     <div className="app-advert">
-                        <div className="app-advert-text">
+                        <div className="app-advert-text-and-login">
                             <h1 className="app-advert-h1">
                                 <span className="no1-exercise-app font-light">#1 exercise tracking app</span>
                                 <span className="reach-your-goals font-light">Reach your goals</span> 
                                 <span className="with-myexerciseapp font-light">With MyExerciseApp</span>
                             </h1>
                             <p className="advert-tagline font-light">Build healthy habits with the all-in-one food, exercise, and calorie tracker.</p>
+                        
+                            <NavLink to = "/register" className="navLink-get-started-link">Get Started </NavLink>
+        
+
                         </div>
                         <img className="hero-phone-img" alt="image of a phone displaying the my exercise app" src={heroPhone}></img>
+
 
                     </div>
 

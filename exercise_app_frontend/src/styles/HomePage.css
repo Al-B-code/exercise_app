@@ -20,7 +20,7 @@
 }
 
 .home-page-header.scrolled {
-    /* height: 10vh;/ */
+
     background-color: white;
     transition: 0.5s;
     box-shadow: 0px 14px 86px -7px rgba(0,0,0,0.75);
@@ -60,7 +60,6 @@
 
 #start-today-slice {
     height: 700px;
-    /* margin-top: 10vh; */
     background: linear-gradient(200.00deg, #0066EE 60%, #9383FB 100%);
 }
 
@@ -83,20 +82,36 @@
 
 
 .hero-phone-img {
-    /* max-width: 60%;
-    max-height: 60%; */
+
     width: 250px;
-    /* box-shadow: 0px 14px 86px -7px rgba(0,0,0,0.75); */
     border-radius: 40px;
     filter: drop-shadow(20px 40px 30px rgba(0, 0, 0, 0.5));
 }
 
-.app-advert-text {
-    /* max-width: 50%; */
+.app-advert-text-and-login {
+
 }
 
+
+.navLink-get-started-link {
+    margin-top: 50px;
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: white;
+    text-align: center;
+    border-radius: 5px;
+    color: #0066EE;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.navLink-get-started-link:hover {
+    cursor: pointer;
+}
+
+
 .app-advert-h1 {
-    /* max-width: 50%; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
