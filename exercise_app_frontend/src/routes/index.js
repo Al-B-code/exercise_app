@@ -6,6 +6,8 @@ import Logout from "../components/Logout"
 import Register from "../Pages/Register";
 import UserDashboard from "../Pages/UserDashboard";
 import UserProfile from "../Pages/UserProfile";
+import Layout from "../layout/Layout";
+import UserDashboardContainer from "../containers/UserDashboardContainer";
 
 // the files having js or jsx for the file extension doesn't really matter as they're interchangeable and vscode can read jsx in js files.
 
@@ -33,16 +35,18 @@ const Routes = () => {
             children: [
                 {
                     path: "/",
-                    element: <UserDashboard/>,
+                    element: <Layout/>,
+                    children: [
+                        {
+                            path: "/",
+                            element: <UserDashboardContainer/>,
+                        },
+                        {
+                            path: "/profile/:userId",
+                            element: <UserProfile/>,
+                        },                     
+                    ]
                 },
-                {
-                    path: "/profile/:userId",
-                    element: <UserProfile/>,
-                },
-                {
-                    path: "/logout",
-                    element: <Logout/>
-                }
             ],
         },
     ];

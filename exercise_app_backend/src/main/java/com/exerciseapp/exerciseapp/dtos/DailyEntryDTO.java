@@ -12,7 +12,7 @@ public class DailyEntryDTO {
 
     private Integer calorieIntake;
 
-    private Integer sleepDuration;
+    private Double sleepDuration;
 
     private String mood;
 
@@ -20,7 +20,7 @@ public class DailyEntryDTO {
     public DailyEntryDTO() {
     }
 
-    public DailyEntryDTO(Long userId, ZonedDateTime date, Double weight, Integer calorieIntake, Integer sleepDuration, String mood) {
+    public DailyEntryDTO(Long userId, ZonedDateTime date, Double weight, Integer calorieIntake, Double sleepDuration, String mood) {
         this.userId = userId;
         this.date = date;
         this.weight = weight;
@@ -61,11 +61,11 @@ public class DailyEntryDTO {
         this.calorieIntake = calorieIntake;
     }
 
-    public Integer getSleepDuration() {
+    public Double getSleepDuration() {
         return sleepDuration;
     }
 
-    public void setSleepDuration(Integer sleepDuration) {
+    public void setSleepDuration(Double sleepDuration) {
         this.sleepDuration = sleepDuration;
     }
 
