@@ -27,8 +27,11 @@ const Home = () => {
 
         <div className="home-page-wrapper">
             <div className={`home-page-header ${scrollTopData}`}>
-                <h1 className="header-title">myexerciseapp</h1>
-                <NavLink to = "/login" className="header-login-nav-button"><a href="" className="login-logo-a"><img className="login-logo-img" src={loginLogo} alt="login-logo-button"/></a></NavLink>
+                <div className="title-login-wrapper">
+                    <h1 className="header-title">myexerciseapp</h1>
+                
+                    <NavLink to = "/login" className="header-login-nav-button"><a href="" className="login-logo-a"><img className="login-logo-img" src={loginLogo} alt="login-logo-button"/></a></NavLink>
+                </div>
             </div>
             <div className="home-page-body">
                 <section className="home-page-body-slice" id="start-today-slice">
