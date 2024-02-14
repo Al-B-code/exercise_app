@@ -21,6 +21,8 @@ const Login = () => {
         email: '',
         password: '',
     })
+    const [navigateToDashboard, setNavigateToDashboard] = useState(true);
+
 
 
     const handleUserLoginInformationChange = (event) => {
@@ -35,12 +37,16 @@ const Login = () => {
 
         try {
             await fetchToken(userLoginInformation);
-
-            navigate("/", { replace: true });
+            // navigate("/", { replace: true });
         } catch (error) {
-            console.log("Error during login: ", error);
+            console.error("Error during login: ", error);
+            setNavigateToDashboard(false);
+            navigate("/login", {replace: true});
         }
-        navigate("/", {replace: true});
+            if (!navigateToDashboard) {
+                navigate("/", {replace: true});
+            }
+        
     };
 
 
@@ -54,11 +60,16 @@ const Login = () => {
             const data = await response.json();
             setToken(data.token);
             fetchUser(data.token);
-            console.log("this is the data", data);
+            // console.log("this is the data", data);
             // console.log("This is the token set", token);
+            if (response.ok){
+                navigate("/", {replace: true});
+            }
         } catch (error) {
             console.error("error logging in: ", error)
+            alert("Error logging in, please check your password and email.");
         }
+        
 
     }
     
