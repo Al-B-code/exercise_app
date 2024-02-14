@@ -94,13 +94,14 @@
 
 
 .navLink-get-started-link {
+    text-decoration: none;
     margin-top: 50px;
     display: block;
     width: 115px;
     height: 25px;
     background: white;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
     color: #0066EE;
     font-weight: bold;
     line-height: 25px;
@@ -108,6 +109,8 @@
 
 .navLink-get-started-link:hover {
     cursor: pointer;
+    background: rgb(242, 242, 242);
+
 }
 
 
