@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import "../styles/RegistrationPage.css";
 
 
 
@@ -71,7 +72,9 @@ const Register = () => {
 
     return ( 
 
-        <form id="login-form" onSubmit={handleRegister}>
+        <section className='registration-form-container'>
+
+        <form id="registration-form" onSubmit={handleRegister}>
             <p>Registration Page</p>
             <label htmlFor="login-form">Please enter your details</label>
 
@@ -124,6 +127,9 @@ const Register = () => {
             <button type="submit">Login</button>
 
             </form>
+
+        </section>
+
 
 
 

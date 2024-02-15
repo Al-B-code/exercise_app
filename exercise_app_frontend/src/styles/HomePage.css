@@ -89,6 +89,10 @@
 }
 
 .app-advert-text-and-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 
 }
 
