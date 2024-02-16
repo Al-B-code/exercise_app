@@ -30,3 +30,23 @@
     margin-left: 15%;
 }
 
+#registration-form > button {
+    margin: 20px 10px;
+    font-weight: 500;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    background: #185adb;
+    transition: all 0.25s ease;
+    width: 90%;
+    font-size: 1rem;
+}
+
+#registration-form > button:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    background: #0f4cc6;
+}
+
