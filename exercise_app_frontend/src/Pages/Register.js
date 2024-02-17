@@ -75,9 +75,9 @@ const Register = () => {
         <section className='registration-form-container'>
 
         <form id="registration-form" onSubmit={handleRegister}>
-            <p>Registration Page</p>
-            <label htmlFor="login-form">Please enter your details</label>
+            <h1>Registration</h1>
 
+            <label htmlFor="login-form">Please enter your details</label>
             <input
                 id="userFirstName"
                 name="firstName"
