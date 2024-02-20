@@ -65,7 +65,7 @@ const Register = () => {
             console.log("this is the data", data);
             console.log("This is the headers.Authorization", headers.Authorization)
         } catch (error) {
-            console.error("error logging in: ", error)
+            console.error("error registering: ", error)
         }
     } 
 
