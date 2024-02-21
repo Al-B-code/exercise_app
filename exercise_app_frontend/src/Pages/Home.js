@@ -61,7 +61,39 @@ const Home = () => {
                 </section>
                 <section className="home-page-body-slice" id="reviews">
                     <p>test</p>
-                    <img className="review-stars-svg" src={stars}></img>
+
+                    <div class="slideshow-container">
+                        <img className="review-stars-svg" src={stars}></img>
+
+                        <div class="my-slides fade">
+                            <div class="review-text">1 / 3</div>
+                            <div class="text">Caption Text</div>
+                        </div>
+
+                        <div class="my-slides fade">
+                            <div class="review-text">2 / 3</div>
+                            <div class="text">Caption Two</div>
+                        </div>
+
+                        <div class="my-slides fade">
+                            <div class="review-text">3 / 3</div>
+                            <div class="text">Caption Three</div>
+                        </div>
+
+                        <div className="prev-next-container">
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        
+                        
+                        <div>
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+
+
 
                 </section>
                 <section className="home-page-body-slice" id="start-today-slice">
