@@ -60,7 +60,6 @@ const Home = () => {
 
                 </section>
                 <section className="home-page-body-slice" id="reviews">
-                    <p>test</p>
 
                     <div class="slideshow-container">
                         <img className="review-stars-svg" src={stars}></img>
