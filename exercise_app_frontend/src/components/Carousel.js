@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Carousel.css"
 
-const Carousel = ({slides, renderSlide }) => {
+const Carousel = ({slides, renderSlide, interval = 3000 }) => {
 
     const [activeIndex, setActiveIndex] = useState(0);
     
@@ -19,6 +19,14 @@ const Carousel = ({slides, renderSlide }) => {
     const handleDotClick = (index) => {
         setActiveIndex(index);
     }
+
+    useEffect(() => {
+
+        const autoPlayInterval = setInterval(nextSlide, interval);
+        return () => {
+            clearInterval(autoPlayInterval);
+        }
+    }, [interval])
 
 
 
