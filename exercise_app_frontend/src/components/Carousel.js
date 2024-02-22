@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "../styles/Carousel.css"
 
-const Carousel = ({slides, renderSlide, interval = 3000 }) => {
+const Carousel = ({slides, renderSlide, interval = 8000 }) => {
 
     const [activeIndex, setActiveIndex] = useState(0);
+    const [transitioning, setTransitioning] = useState(false);
+    const [nextIndex, setNextIndex] = useState(0);
     
     const nextSlide = () => {
         setActiveIndex((prevIndex) => 
@@ -20,13 +22,28 @@ const Carousel = ({slides, renderSlide, interval = 3000 }) => {
         setActiveIndex(index);
     }
 
+    const transitionToSlide = (nextIndex) => {
+        setTransitioning(true);
+        setTimeout(() => {
+            setActiveIndex(nextIndex);
+            setTransitioning(false);
+        }, 500); // transition time.
+    };
+
+    // const resetSlidePosition = () => {
+    //     // Reset slide position to the first slide when reaching the last slide
+    //     if (activeIndex === slides.length - 1) {
+    //         setActiveIndex(0);
+    //     }
+
     useEffect(() => {
 
         const autoPlayInterval = setInterval(nextSlide, interval);
         return () => {
             clearInterval(autoPlayInterval);
         }
-    }, [interval])
+
+    }, [activeIndex, interval, slides.length])
 
 
 
@@ -46,9 +63,9 @@ const Carousel = ({slides, renderSlide, interval = 3000 }) => {
             </button> */}
             <div className="slide-content">
                 {renderSlide(slides[activeIndex])}
-                <div className="dots-container">
+            </div>
+            <div className="dots-container">
                     {createDotComponents(slides)}
-                </div>
             </div>
             {/* <button onClick={nextSlide} className="carousel__btn carousel__btn--next">
                 &gt;

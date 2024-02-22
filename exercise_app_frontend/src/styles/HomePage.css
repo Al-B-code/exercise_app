@@ -182,17 +182,15 @@
     margin-bottom: 5%;
 }
 
-
-
-
+/* .review-container {
+    animation: slide 2s
+} */
 
 
   
-
-  
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+@keyframes slide {
+    from {transform: translateX(30%)}
+    to {transform: translateX(0)}
 }
 
 
