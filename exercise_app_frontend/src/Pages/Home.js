@@ -6,12 +6,23 @@ import blueLoginLogo from "../assets/icons8-user-blue.png";
 import stars from "../assets/review-stars.svg";
 import heroPhone from "../assets/hero-phone-large.png";
 import "../styles/Carousel.css"
+import Carousel from "../components/Carousel";
 
 const Home = () => {
 
     const [scrollTopData, setScrollTopData] = useState('');
     const [scrollLoginLogo, setScrollLoginLogo] = useState(lightLoginLogo);
     // const [slideIndex, setSlideIndex] = useState(1);
+
+    const reviews = [
+       {name: "John M", content: "\"Friendly, easy-to-use app that keeps me accountable.\""},
+       {name: "Sarah L", content: "\"Can't lose weight and stay on track without it.\""},
+       {name: "Dinah K", content: "\"Helped me get moving on my goals and tracking my weight loss and bodybuilding.\""}
+    ]
+
+    const renderSlide = (review) => (
+        <div className="review-container"> <p className="review-content">{review.content}</p> <p className="review-name"><strong>{review.name}.</strong></p></div>
+    );
 
 
     useEffect(() => {
@@ -20,18 +31,6 @@ const Home = () => {
     }, [])
 
 
-    // function plusSlides(n) {
-    //     showSlides(slideIndex += n);
-    // }
-
-    // function currentSlide(n) {
-    //     showSlides(slideIndex = n);
-    // }
-
-    // function showSlides(n) {
-    //     let i;
-    //     let slides = 
-    // }
 
 
 
@@ -78,39 +77,10 @@ const Home = () => {
 
                 </section>
                 <section className="home-page-body-slice" id="reviews">
-
-                    <div class="slideshow-container">
                         <img className="review-stars-svg" src={stars}></img>
+                        <h2 className="review-h2">3.7 Million 5-Star Reviews</h2>
 
-                        <div class="my-slides fade">
-                            <div class="review-text">1 / 3</div>
-                            <div class="text">Caption Text</div>
-                        </div>
-
-                        <div class="my-slides fade">
-                            <div class="review-text">2 / 3</div>
-                            <div class="text">Caption Two</div>
-                        </div>
-
-                        <div class="my-slides fade">
-                            <div class="review-text">3 / 3</div>
-                            <div class="text">Caption Three</div>
-                        </div>
-
-
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                        
-                        
-                        <div>
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                        </div>
-                    </div>
-
-
+                        <Carousel slides={reviews} renderSlide={renderSlide}/>
 
                 </section>
                 <section className="home-page-body-slice" id="start-today-slice">
