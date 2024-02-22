@@ -1,20 +1,38 @@
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../styles/HomePage.css";
 import lightLoginLogo from "../assets/icons8-user-light.png";
 import blueLoginLogo from "../assets/icons8-user-blue.png";
 import stars from "../assets/review-stars.svg";
 import heroPhone from "../assets/hero-phone-large.png";
+import "../styles/Carousel.css"
 
 const Home = () => {
 
     const [scrollTopData, setScrollTopData] = useState('');
     const [scrollLoginLogo, setScrollLoginLogo] = useState(lightLoginLogo);
+    // const [slideIndex, setSlideIndex] = useState(1);
+
 
     useEffect(() => {
         changeHeaderOnScroll();
         
     }, [])
+
+
+    // function plusSlides(n) {
+    //     showSlides(slideIndex += n);
+    // }
+
+    // function currentSlide(n) {
+    //     showSlides(slideIndex = n);
+    // }
+
+    // function showSlides(n) {
+    //     let i;
+    //     let slides = 
+    // }
+
 
 
     const changeHeaderOnScroll = () => {
