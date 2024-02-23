@@ -60,8 +60,6 @@ const Login = () => {
             const data = await response.json();
             setToken(data.token);
             fetchUser(data.token);
-            // console.log("this is the data", data);
-            // console.log("This is the token set", token);
             if (response.ok){
                 navigate("/", {replace: true});
             }
@@ -91,14 +89,6 @@ const Login = () => {
             console.error("error fetching user: ", error)
         }
     }
-
-    // useEffect(() => {
-    //     // This will log the updated token whenever it changes
-
-
-    //         console.log("Token updated:", token);
-
-    // }, [token]);
 
 
 
