@@ -189,9 +189,77 @@
 #hit-health-goals-slice {
 
     background-color: white;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.hit-health-goals-title {
+    
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 3.5rem;
+    font-weight: 600;
 
 }
+
+.how-it-works-container {
+    /* display: flex; */
+}
+.step-1-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.step-2-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.step-3-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.how-it-works-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #0066EE;
+}
+.how-it-works-step-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.how-it-works-step-content-text {
+    color: #6C6C70;
+    font-size: 1.2rem;
+
+}
+
+.step-1-word-container {
+    max-width: 340px;
+    margin-left: 70px;
+}
+
+.step-2-word-container {
+    max-width: 340px;
+    margin-right: 70px;
+}
+
+.step-3-word-container {
+    max-width: 340px;
+    margin-left: 70px;
+}
+
+
+
+
 
 
   

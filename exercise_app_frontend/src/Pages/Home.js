@@ -8,6 +8,10 @@ import heroPhone from "../assets/hero-phone-large.png";
 import "../styles/Carousel.css"
 import Carousel from "../components/Carousel";
 
+import trackFood from "../assets/track-food-large.webp"
+import learnWhatWorks from "../assets/learn-what-works-large.webp"
+import changeYourHabits from "../assets/change-your-habits-large.webp"
+
 const Home = () => {
 
     const [scrollTopData, setScrollTopData] = useState('');
@@ -84,16 +88,37 @@ const Home = () => {
 
                 </section>
                 <section className="home-page-body-slice" id="hit-health-goals-slice">
-                    <h2>Hit your health goals in 1-2-3</h2>
+                    <h2 className="hit-health-goals-title">Hit your health goals in 1-2-3</h2>
                     <div className="how-it-works-container">
                         <div className="step-1-container">
-                            
-
+                            <div className="step-1-image-container">
+                                <img className="track-food-img" alt="image showing food tracking in the app" src={trackFood}></img>
+                            </div>
+                            <div className="step-1-word-container">
+                                <p className="how-it-works-number">1</p>
+                                <p className="how-it-works-step-title">Track food, fitness & fasting</p>
+                                <p className="how-it-works-step-content-text">Tracking calories and macros is easy with our barcode scanner and device integration</p>
+                            </div>
                         </div>
                         <div className="step-2-container">
-
+                            <div className="step-2-image-container">
+                                <img className="daily-tracking-img" alt="image showing daily tracking in the app" src={learnWhatWorks}></img>    
+                            </div>
+                            <div className="step-2-word-container">
+                                <p className="how-it-works-number">2</p>
+                                <p className="how-it-works-step-title">Learn what works</p>
+                                <p className="how-it-works-step-content-text">Personalised nutrition insights reveal what's working to you can make smarter choices.</p>
+                            </div>
                         </div>
                         <div className="step-3-container">
+                            <div className="step-3-image-container">
+                                <img className="track-food-img" alt="image showing daily tracking in the app" src={changeYourHabits}></img>    
+                            </div>
+                            <div className="step-3-word-container">
+                                <p className="how-it-works-number">3</p>
+                                <p className="how-it-works-step-title">Change your habits and reach your goals</p>
+                                <p className="how-it-works-step-content-text">Now you have the tools and knowledge to build healthy habits for life.</p>
+                            </div>
 
                         </div>
 
