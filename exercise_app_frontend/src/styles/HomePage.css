@@ -186,6 +186,13 @@
     animation: slide 2s
 } */
 
+#hit-health-goals-slice {
+
+    background-color: white;
+
+
+}
+
 
   
 @keyframes slide {

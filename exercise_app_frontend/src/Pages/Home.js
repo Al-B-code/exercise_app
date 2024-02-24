@@ -83,8 +83,21 @@ const Home = () => {
                         <Carousel slides={reviews} renderSlide={renderSlide}/>
 
                 </section>
-                <section className="home-page-body-slice" id="start-today-slice">
-                    <p>test</p>
+                <section className="home-page-body-slice" id="hit-health-goals-slice">
+                    <h2>Hit your health goals in 1-2-3</h2>
+                    <div className="how-it-works-container">
+                        <div className="step-1-container">
+                            
+
+                        </div>
+                        <div className="step-2-container">
+
+                        </div>
+                        <div className="step-3-container">
+
+                        </div>
+
+                    </div>
 
                 </section>
 
