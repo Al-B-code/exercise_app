@@ -125,6 +125,10 @@ const Home = () => {
                     </div>
 
                 </section>
+                <section className="home-page-body-slice" id="food-calorie-tracker">
+                    
+                </section>
+
 
             </div>
             <div className="home-page-footer">
