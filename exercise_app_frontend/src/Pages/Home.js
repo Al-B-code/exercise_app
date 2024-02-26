@@ -126,7 +126,11 @@ const Home = () => {
 
                 </section>
                 <section className="home-page-body-slice" id="food-calorie-tracker">
-                    
+                    <h2>If it's edible, it's in here</h2>
+                    <p>Food tracking app with 18 million global foods</p>
+                    {/* Link below to a search page connected to the api with food? */}
+                    {/* <NavLink to = "/register" className="navLink-get-started-link">Get Started </NavLink> */}
+
                 </section>
 
 
