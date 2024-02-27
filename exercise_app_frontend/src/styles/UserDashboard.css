@@ -12,23 +12,60 @@ Crimson = #D72638
 }
 
 .side-bar {
-    width: 25%;
+    width: 20vw;
     height: 100vh;
     /* border: 3px solid #28536B; */
-    background-color: #28536B ;
+    background: linear-gradient(200.00deg, #0066EE 60%, #9383FB 100%);
     color: #F6F0ED;
     display: flex;
     flex-direction: column;
-    
 }
 
 .side-bar > nav {
     margin-bottom: 5%;
+    height: 50%;
+    max-width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+
+
+
+nav ul li {
+    transition: ease-in-out 0.2s;
+    list-style: none;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    height: 3rem;
+}
+
+nav ul li:hover {
+    transition: ease-in-out 0.2s;
+    background-color: rgba(0,0,0,0.5);
+    font-weight: 700;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
 }
 
 .side-bar > .user-details {
     margin-bottom: 5%;
     margin-top: 5%;
+}
+
+.sidebar-nav-list-element {
+    margin-left: 2rem;
 }
 
 #daily-entry-modal-button {
