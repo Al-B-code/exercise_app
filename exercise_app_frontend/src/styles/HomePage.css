@@ -1,0 +1,288 @@
+.home-page-wrapper {
+    background-color: #0066EE;
+    height: 100%;
+}
+
+.home-page-header {
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0066EE ;
+    width: 100%;
+    z-index: 9999;
+    transition: 0.5s;
+    color: white;
+}
+
+.home-page-header.scrolled {
+
+    background-color: white;
+    transition: 0.5s;
+    box-shadow: 0px 14px 86px -7px rgba(0,0,0,0.75);
+    color:#0066EE
+}
+
+.home-page-body-slice {
+    width: 100%;
+    height: 70vh;
+}
+
+.header-title {
+    margin-left: 20vw;
+}
+
+.title-login-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.header-login-nav-button {
+    margin-right: 20vw;
+}
+.login-logo-img {
+    max-height: 2rem;
+    max-width: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.home-page-body {
+    margin-top: 7vh;
+    height: 100%;
+}
+
+#start-today-slice {
+    height: 700px;
+    background: linear-gradient(200.00deg, #0066EE 60%, #9383FB 100%);
+}
+
+.font-light {
+    color: white;
+}
+
+.app-advert {
+
+    padding-top: 5dvh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.hero-phone-img {
+
+    width: 250px;
+    border-radius: 40px;
+    filter: drop-shadow(20px 40px 30px rgba(0, 0, 0, 0.5));
+}
+
+.app-advert-text-and-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+
+
+.navLink-get-started-link {
+    text-decoration: none;
+    margin-top: 50px;
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: white;
+    text-align: center;
+    border-radius: 15px;
+    color: #0066EE;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.navLink-get-started-link:hover {
+    cursor: pointer;
+    background: rgb(242, 242, 242);
+
+}
+
+
+.app-advert-h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.no1-exercise-app {
+    color: #D8D8DC;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.reach-your-goals {
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+.with-myexerciseapp {
+    font-size: 5rem;
+    font-weight: 200;
+}
+
+.advert-tagline {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+#reviews {
+    background-color: #151824;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-page-footer {
+ 
+}
+
+.review-stars-svg {
+    width: 10rem;
+}
+
+.review-h2 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.slide-content {
+    min-width: 80%
+}
+
+
+.review-content {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.review-name {
+    font-size: 1rem;
+    margin-bottom: 5%;
+}
+
+/* .review-container {
+    animation: slide 2s
+} */
+
+#hit-health-goals-slice {
+
+    background-color: white;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hit-health-goals-title {
+    
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+
+}
+
+.how-it-works-container {
+    /* display: flex; */
+}
+.step-1-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.step-2-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.step-3-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.how-it-works-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #0066EE;
+}
+.how-it-works-step-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.how-it-works-step-content-text {
+    color: #6C6C70;
+    font-size: 1.2rem;
+
+}
+
+.step-1-word-container {
+    max-width: 340px;
+    margin-left: 70px;
+}
+
+.step-2-word-container {
+    max-width: 340px;
+    margin-right: 70px;
+}
+
+.step-3-word-container {
+    max-width: 340px;
+    margin-left: 70px;
+}
+
+#food-calorie-tracker {
+    background: linear-gradient(200.00deg, #0066EE 60%, #9383FB 100%);
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#food-calorie-tracker h2 {
+    font-size: 5rem;
+}
+
+#food-calorie-tracker p {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+
+
+  
+@keyframes slide {
+    from {transform: translateX(30%)}
+    to {transform: translateX(0)}
+}
+
+

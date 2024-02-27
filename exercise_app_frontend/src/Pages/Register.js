@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import "../styles/RegistrationPage.css";
 
 
 
@@ -64,66 +65,81 @@ const Register = () => {
             console.log("this is the data", data);
             console.log("This is the headers.Authorization", headers.Authorization)
         } catch (error) {
-            console.error("error logging in: ", error)
+            console.error("error registering: ", error)
         }
     } 
 
 
     return ( 
 
-        <form id="login-form" onSubmit={handleRegister}>
-            <p>Registration Page</p>
-            <label htmlFor="login-form">Please enter your details</label>
+    <section className='registration-form-container'>
+        <form id="registration-form" onSubmit={handleRegister}>
+            <h1>Registration</h1>
+                <fieldset className='register-form-first-name-fieldset'>
+                    <label htmlFor="register-form-first-name-input">Enter your first name</label>
+                    <input
+                        id="user-first-name-register"
+                        name="firstname"
+                        type="firstName"
+                        placeholder="Please Enter Your First Name"
+                        value={userRegisterInformation.firstName}
+                        onChange={handleUserRegisterInformationChange}
+                    />
+                </fieldset>
 
-            <input
-                id="userFirstName"
-                name="firstName"
-                type="firstName"
-                placeholder="Please Enter Your First Name"
-                value={userRegisterInformation.firstName}
-                onChange={handleUserRegisterInformationChange}
-            />
+                <fieldset className='register-form-last-name-fieldset'>
+                    <label htmlFor="register-form-last-name-input">Enter your last name</label>
+                    <input
+                        id="user-last-name-register"
+                        name="lastName"
+                        type="lastName"
+                        placeholder="Please Enter Your Last Name"
+                        value={userRegisterInformation.lastName}
+                        onChange={handleUserRegisterInformationChange}
+                    />
+                </fieldset>
 
-            <input
-                id="userLastName"
-                name="lastName"
-                type="lastName"
-                placeholder="Please Enter Your Last Name"
-                value={userRegisterInformation.lastName}
-                onChange={handleUserRegisterInformationChange}
-            />
+                <fieldset className='register-form-email-input'>
+                <label htmlFor="register-form-email-input">Enter your email</label>
+                <input
+                    id="user-email-register"
+                    name="email"
+                    type="email"
+                    placeholder="Please Enter Your Email"
+                    value={userRegisterInformation.email}
+                    onChange={handleUserRegisterInformationChange}
+                />
+                </fieldset>
 
-            <input
-                id="userEmail"
-                name="email"
-                type="email"
-                placeholder="Please Enter Your Email"
-                value={userRegisterInformation.email}
-                onChange={handleUserRegisterInformationChange}
-            />
+                <fieldset className='register-form-password-input'>
+                    <label htmlFor="register-form-password-input">Enter a password</label>
+                    <input
+                        id="user-password-register"
+                        name="password"
+                        type="password"
+                        placeholder="Please Enter Your Password"
+                        value={userRegisterInformation.password}
+                        onChange={handleUserRegisterInformationChange}
+                    />
+                </fieldset>
 
-            <input
-                id="userPassword"
-                name="password"
-                type="password"
-                placeholder="Please Enter Your Password"
-                value={userRegisterInformation.password}
-                onChange={handleUserRegisterInformationChange}
-            />
-
-            <input
-                id="userConfirmPassword"
-                name="confirmPassword"
-                type="confirmPassword"
-                placeholder="Please Confirm Your Password"
-                value={userRegisterInformation.confirmPassword}
-                onChange={handleUserRegisterInformationChange}
-            />
+                <fieldset className='register-form-confirm-password-input'>
+                    <label htmlFor="register-form-confirm-password-input">Please confirm your password</label>
+                    <input
+                        id="userConfirmPassword"
+                        name="confirmPassword"
+                        type="password"
+                        placeholder="Please Confirm Your Password"
+                        value={userRegisterInformation.confirmPassword}
+                        onChange={handleUserRegisterInformationChange}
+                    />
+                </fieldset>
 
 
-            <button type="submit">Login</button>
+                <button type="submit">Register</button>
+        </form>
+    </section>
 
-            </form>
 
 
 
