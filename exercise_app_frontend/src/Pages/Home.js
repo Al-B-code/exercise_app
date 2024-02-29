@@ -16,7 +16,6 @@ const Home = () => {
 
     const [scrollTopData, setScrollTopData] = useState('');
     const [scrollLoginLogo, setScrollLoginLogo] = useState(lightLoginLogo);
-    // const [slideIndex, setSlideIndex] = useState(1);
 
     const reviews = [
        {name: "John M", content: "\"Friendly, easy-to-use app that keeps me accountable.\""},
