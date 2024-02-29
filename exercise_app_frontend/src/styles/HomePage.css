@@ -154,9 +154,7 @@
     flex-direction: column;
 }
 
-.home-page-footer {
- 
-}
+
 
 .review-stars-svg {
     width: 10rem;
@@ -205,9 +203,7 @@
 
 }
 
-.how-it-works-container {
-    /* display: flex; */
-}
+
 .step-1-container {
     display: flex;
     flex-direction: row;
