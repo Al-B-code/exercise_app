@@ -200,26 +200,46 @@
     margin-bottom: 5rem;
     font-size: 3.5rem;
     font-weight: 600;
+}
 
+
+.how-it-works-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: fit-content
 }
 
 
 .step-1-container {
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    height: 550px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 .step-2-container {
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    height: 550px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
 }
 
 .step-3-container {
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    height: 550px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .how-it-works-number {
