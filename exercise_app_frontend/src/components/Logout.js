@@ -16,11 +16,6 @@ const Logout = () => {
         navigate("/", { replace: true});
     };
 
-
-
-    // setTimeout(() => {
-    //     handleLogout();
-    // }, 3 * 1000);
     
     return ( 
         <>
