@@ -8,9 +8,7 @@ const Layout = () => {
         <div className="wrapper">
             <DashboardSidebar/>
             <div className="main">
-                <div className="outlet-content">
                     <Outlet/>
-                </div>
             </div>
         </div>
      );

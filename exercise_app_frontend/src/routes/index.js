@@ -6,7 +6,7 @@ import Logout from "../components/Logout"
 import Register from "../pages/Register";
 import UserDashboard from "../pages/UserDashboard";
 import UserProfile from "../pages/UserProfile";
-import Layout from "../Layout/Layout.js"
+import Layout from "../layout/Layout.js"
 import UserDashboardContainer from "../containers/UserDashboardContainer";
 import Home from "../pages/Home";
 

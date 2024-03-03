@@ -81,7 +81,7 @@ const fetchGoals = async () => {
     return ( 
         // <div className="user-dashboard-container">
         //     <DashboardSidebar setIsOpen={setIsOpen} isOpen={isOpen}/>
-        <div className="main">
+        <div className="user-dashboard-container">
             <WeightTrackerTile dailyEntries={dailyEntries}/>
             <GoalsTile goals={goals}/>
             <ExerciseTile/>
